@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating extensions using numpy and scipy &mdash; PyTorch Tutorials  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyTorch Tutorials  documentation" href="../index.html"/>
+        <link rel="next" title="Custom C extensions for pytorch" href="c_extension.html"/>
+        <link rel="prev" title="Reinforcement Learing (DQN) tutorial" href="reinforcement_q_learning_tutorial.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyTorch Tutorials
+          
+
+          
+            
+            <img src="../_static/pytorch-logo-dark.svg" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensor_tutorial.html">What is PyTorch?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#tensors">Tensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#operations">Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autograd_tutorial.html#gradients">Gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neural_networks_tutorial.html">Neural Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neural_networks_tutorial.html#define-the-network">Define the network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neural_networks_tutorial.html#loss-function">Loss Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neural_networks_tutorial.html#backprop">Backprop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neural_networks_tutorial.html#update-the-weights">Update the weights</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cifar10_tutorial.html">Training a classifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cifar10_tutorial.html#what-about-data">What about data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cifar10_tutorial.html#training-an-image-classifier">Training an image classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cifar10_tutorial.html#loading-and-normalizing-cifar10">1. Loading and normalizing CIFAR10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cifar10_tutorial.html#define-a-convolution-neural-network">2. Define a Convolution Neural Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cifar10_tutorial.html#define-a-loss-function-and-optimizer">3. Define a Loss function and optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cifar10_tutorial.html#train-the-network">4. Train the network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cifar10_tutorial.html#test-the-network-on-the-test-data">5. Test the network on the test data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cifar10_tutorial.html#training-on-gpu">Training on GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cifar10_tutorial.html#where-do-i-go-next">Where do I go next?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="former_torchies_tutorial.html">PyTorch for former Torch users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torchies_tensor_tutorial.html">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torchies_tensor_tutorial.html#inplace-out-of-place">Inplace / Out-of-place</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_tensor_tutorial.html#zero-indexing">Zero Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_tensor_tutorial.html#no-camel-casing">No camel casing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="torchies_tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="torchies_tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="torchies_autograd_tutorial.html">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torchies_autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_autograd_tutorial.html#gradients">Gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="torchies_nn_tutorial.html">nn package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torchies_nn_tutorial.html#example-1-convnet">Example 1: ConvNet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_nn_tutorial.html#forward-and-backward-function-hooks">Forward and Backward Function Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_nn_tutorial.html#example-2-recurrent-net">Example 2: Recurrent Net</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="torchies_parallelism_tutorial.html">Multi-GPU examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torchies_parallelism_tutorial.html#dataparallel">DataParallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torchies_parallelism_tutorial.html#part-of-the-model-on-cpu-and-part-on-the-gpu">Part of the model on CPU and part on the GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#q-network">Q-network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#input-extraction">Input extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#hyperparameters-and-utilities">Hyperparameters and utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#training-loop">Training loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating extensions using numpy and scipy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-less-example">Parameter-less example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parametrized-example">Parametrized example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c_extension.html">Custom C extensions for pytorch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PyTorch Tutorials</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Creating extensions using numpy and scipy</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tutorials/numpy_extensions_tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-extensions-using-numpy-and-scipy">
+<span id="sphx-glr-tutorials-numpy-extensions-tutorial-py"></span><h1>Creating extensions using numpy and scipy<a class="headerlink" href="#creating-extensions-using-numpy-and-scipy" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we shall go through two tasks:</p>
+<ol class="arabic">
+<li><p class="first">Create a neural network layer with no parameters.</p>
+<blockquote>
+<div><ul class="simple">
+<li>This calls into <strong>numpy</strong> as part of it’s implementation</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Create a neural network layer that has learnable weights</p>
+<blockquote>
+<div><ul class="simple">
+<li>This calls into <strong>SciPy</strong> as part of it’s implementation</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Function</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+</pre></div>
+</div>
+<div class="section" id="parameter-less-example">
+<h2>Parameter-less example<a class="headerlink" href="#parameter-less-example" title="Permalink to this headline">¶</a></h2>
+<p>This layer doesn’t particularly do anything useful or mathematically
+correct.</p>
+<p>It is aptly named BadFFTFunction</p>
+<p><strong>Layer Implementation</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">rfft2</span><span class="p">,</span> <span class="n">irfft2</span>
+
+
+<span class="k">class</span> <span class="nc">BadFFTFunction</span><span class="p">(</span><span class="n">Function</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="n">numpy_input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">rfft2</span><span class="p">(</span><span class="n">numpy_input</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
+        <span class="n">numpy_go</span> <span class="o">=</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">irfft2</span><span class="p">(</span><span class="n">numpy_go</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># since this layer does not have any parameters, we can</span>
+<span class="c1"># simply declare this as a function, rather than as an nn.Module class</span>
+
+
+<span class="k">def</span> <span class="nf">incorrect_fft</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">BadFFTFunction</span><span class="p">()(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example usage of the created layer:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">incorrect_fft</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">8.0700</span>   <span class="mf">7.6469</span>   <span class="mf">3.5988</span>   <span class="mf">5.3753</span>  <span class="mf">13.5780</span>
+  <span class="mf">1.8546</span>   <span class="mf">8.2747</span>   <span class="mf">7.0163</span>   <span class="mf">8.2678</span>   <span class="mf">6.9261</span>
+ <span class="mf">17.5419</span>   <span class="mf">8.8320</span>   <span class="mf">6.4065</span>   <span class="mf">4.9311</span>   <span class="mf">4.8398</span>
+  <span class="mf">9.2245</span>   <span class="mf">3.9024</span>  <span class="mf">15.2164</span>  <span class="mf">13.6523</span>  <span class="mf">10.4336</span>
+  <span class="mf">4.5865</span>   <span class="mf">7.8073</span>   <span class="mf">6.9039</span>   <span class="mf">6.2272</span>   <span class="mf">1.1945</span>
+  <span class="mf">9.2245</span>   <span class="mf">5.0875</span>   <span class="mf">9.5721</span>   <span class="mf">6.2538</span>  <span class="mf">10.4336</span>
+ <span class="mf">17.5419</span>  <span class="mf">17.2817</span>  <span class="mf">14.3662</span>   <span class="mf">1.9877</span>   <span class="mf">4.8398</span>
+  <span class="mf">1.8546</span>   <span class="mf">4.7474</span>   <span class="mf">2.0758</span>   <span class="mf">4.8823</span>   <span class="mf">6.9261</span>
+<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x5</span><span class="p">]</span>
+
+<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
+<span class="o">-</span><span class="mf">0.2386</span> <span class="o">-</span><span class="mf">0.1284</span> <span class="o">-</span><span class="mf">0.1155</span>  <span class="mf">0.1259</span>  <span class="mf">0.0637</span>  <span class="mf">0.1259</span> <span class="o">-</span><span class="mf">0.1155</span> <span class="o">-</span><span class="mf">0.1284</span>
+<span class="o">-</span><span class="mf">0.0288</span> <span class="o">-</span><span class="mf">0.2030</span>  <span class="mf">0.1710</span>  <span class="mf">0.1226</span> <span class="o">-</span><span class="mf">0.1379</span>  <span class="mf">0.1043</span>  <span class="mf">0.0759</span>  <span class="mf">0.0319</span>
+<span class="o">-</span><span class="mf">0.1867</span>  <span class="mf">0.1010</span> <span class="o">-</span><span class="mf">0.1756</span> <span class="o">-</span><span class="mf">0.1419</span> <span class="o">-</span><span class="mf">0.0339</span>  <span class="mf">0.2188</span> <span class="o">-</span><span class="mf">0.0418</span> <span class="o">-</span><span class="mf">0.0026</span>
+<span class="o">-</span><span class="mf">0.0737</span> <span class="o">-</span><span class="mf">0.1855</span> <span class="o">-</span><span class="mf">0.0609</span>  <span class="mf">0.0302</span> <span class="o">-</span><span class="mf">0.1831</span>  <span class="mf">0.0182</span>  <span class="mf">0.0960</span>  <span class="mf">0.0170</span>
+ <span class="mf">0.0223</span> <span class="o">-</span><span class="mf">0.0688</span>  <span class="mf">0.0040</span>  <span class="mf">0.1614</span>  <span class="mf">0.1975</span>  <span class="mf">0.1614</span>  <span class="mf">0.0040</span> <span class="o">-</span><span class="mf">0.0688</span>
+<span class="o">-</span><span class="mf">0.0737</span>  <span class="mf">0.0170</span>  <span class="mf">0.0960</span>  <span class="mf">0.0182</span> <span class="o">-</span><span class="mf">0.1831</span>  <span class="mf">0.0302</span> <span class="o">-</span><span class="mf">0.0609</span> <span class="o">-</span><span class="mf">0.1855</span>
+<span class="o">-</span><span class="mf">0.1867</span> <span class="o">-</span><span class="mf">0.0026</span> <span class="o">-</span><span class="mf">0.0418</span>  <span class="mf">0.2188</span> <span class="o">-</span><span class="mf">0.0339</span> <span class="o">-</span><span class="mf">0.1419</span> <span class="o">-</span><span class="mf">0.1756</span>  <span class="mf">0.1010</span>
+<span class="o">-</span><span class="mf">0.0288</span>  <span class="mf">0.0319</span>  <span class="mf">0.0759</span>  <span class="mf">0.1043</span> <span class="o">-</span><span class="mf">0.1379</span>  <span class="mf">0.1226</span>  <span class="mf">0.1710</span> <span class="o">-</span><span class="mf">0.2030</span>
+<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametrized-example">
+<h2>Parametrized example<a class="headerlink" href="#parametrized-example" title="Permalink to this headline">¶</a></h2>
+<p>This implements a layer with learnable weights.</p>
+<p>It implements the Cross-correlation with a learnable kernel.</p>
+<p>In deep learning literature, it’s confusingly referred to as
+Convolution.</p>
+<p>The backward computes the gradients wrt the input and gradients wrt the
+filter.</p>
+<p><strong>Implementation:</strong></p>
+<p><em>Please Note that the implementation serves as an illustration, and we
+did not verify it’s correctness</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span><span class="p">,</span> <span class="n">correlate2d</span>
+<span class="kn">from</span> <span class="nn">torch.nn.modules.module</span> <span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span> <span class="nn">torch.nn.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
+
+
+<span class="k">class</span> <span class="nc">ScipyConv2dFunction</span><span class="p">(</span><span class="n">Function</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">correlate2d</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_for_backward</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
+        <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">saved_tensors</span>
+        <span class="n">grad_input</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">t</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+        <span class="n">grad_filter</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">grad_input</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">grad_filter</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ScipyConv2d</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kh</span><span class="p">,</span> <span class="n">kw</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ScipyConv2d</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">kh</span><span class="p">,</span> <span class="n">kw</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ScipyConv2dFunction</span><span class="p">()(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example usage:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="o">=</span> <span class="n">ScipyConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">parameters</span><span class="p">()))</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">module</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Parameter</span> <span class="n">containing</span><span class="p">:</span>
+ <span class="mf">1.2041</span>  <span class="mf">0.0327</span> <span class="o">-</span><span class="mf">0.4043</span>
+<span class="o">-</span><span class="mf">0.2368</span> <span class="o">-</span><span class="mf">0.4891</span>  <span class="mf">1.2530</span>
+<span class="o">-</span><span class="mf">1.3001</span>  <span class="mf">0.0858</span> <span class="o">-</span><span class="mf">0.5606</span>
+<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="n">x3</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
+<span class="o">-</span><span class="mf">0.6065</span> <span class="o">-</span><span class="mf">4.1978</span>  <span class="mf">1.2320</span>  <span class="mf">1.6669</span> <span class="o">-</span><span class="mf">0.5343</span>  <span class="mf">0.5870</span> <span class="o">-</span><span class="mf">1.6682</span> <span class="o">-</span><span class="mf">0.6226</span>
+<span class="o">-</span><span class="mf">2.2056</span> <span class="o">-</span><span class="mf">0.5640</span> <span class="o">-</span><span class="mf">2.3634</span> <span class="o">-</span><span class="mf">1.4659</span> <span class="o">-</span><span class="mf">0.0134</span>  <span class="mf">4.8331</span> <span class="o">-</span><span class="mf">0.2409</span> <span class="o">-</span><span class="mf">3.0123</span>
+ <span class="mf">4.2344</span>  <span class="mf">2.3440</span>  <span class="mf">2.2432</span>  <span class="mf">0.3367</span>  <span class="mf">0.1888</span> <span class="o">-</span><span class="mf">3.5098</span>  <span class="mf">0.5261</span>  <span class="mf">3.3766</span>
+<span class="o">-</span><span class="mf">4.7825</span> <span class="o">-</span><span class="mf">1.2634</span>  <span class="mf">2.5659</span>  <span class="mf">0.0841</span>  <span class="mf">2.5104</span>  <span class="mf">0.6568</span>  <span class="mf">1.0637</span>  <span class="mf">0.2809</span>
+ <span class="mf">1.2677</span> <span class="o">-</span><span class="mf">0.6532</span> <span class="o">-</span><span class="mf">2.2866</span> <span class="o">-</span><span class="mf">2.6377</span>  <span class="mf">0.6199</span> <span class="o">-</span><span class="mf">0.7292</span>  <span class="mf">2.5120</span>  <span class="mf">1.9643</span>
+ <span class="mf">3.2906</span>  <span class="mf">1.0548</span>  <span class="mf">2.2744</span>  <span class="mf">2.9475</span> <span class="o">-</span><span class="mf">3.0960</span> <span class="o">-</span><span class="mf">1.7372</span> <span class="o">-</span><span class="mf">3.2907</span> <span class="o">-</span><span class="mf">5.6998</span>
+<span class="o">-</span><span class="mf">4.2711</span> <span class="o">-</span><span class="mf">3.7304</span> <span class="o">-</span><span class="mf">1.2773</span> <span class="o">-</span><span class="mf">3.1931</span>  <span class="mf">0.4899</span>  <span class="mf">3.7899</span> <span class="o">-</span><span class="mf">2.2720</span> <span class="o">-</span><span class="mf">3.4202</span>
+ <span class="mf">0.6574</span>  <span class="mf">3.9993</span> <span class="o">-</span><span class="mf">3.4378</span>  <span class="mf">4.2383</span> <span class="o">-</span><span class="mf">0.0764</span> <span class="o">-</span><span class="mf">3.2907</span>  <span class="mf">0.2375</span>  <span class="mf">9.1735</span>
+<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x8</span><span class="p">]</span>
+
+<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
+<span class="o">-</span><span class="mf">0.6745</span> <span class="o">-</span><span class="mf">0.6269</span> <span class="o">-</span><span class="mf">0.1950</span>  <span class="mf">1.1212</span> <span class="o">-</span><span class="mf">1.0282</span>  <span class="mf">1.9692</span>  <span class="mf">1.7376</span> <span class="o">-</span><span class="mf">2.9834</span>  <span class="mf">0.5536</span>  <span class="mf">1.3692</span>
+<span class="o">-</span><span class="mf">1.7729</span>  <span class="mf">0.2722</span>  <span class="mf">3.2429</span> <span class="o">-</span><span class="mf">0.2899</span> <span class="o">-</span><span class="mf">0.2042</span>  <span class="mf">0.9902</span> <span class="o">-</span><span class="mf">1.6619</span>  <span class="mf">2.3538</span>  <span class="mf">0.1409</span> <span class="o">-</span><span class="mf">1.6847</span>
+ <span class="mf">1.1813</span>  <span class="mf">0.2228</span> <span class="o">-</span><span class="mf">2.0439</span>  <span class="mf">1.6623</span>  <span class="mf">0.8277</span> <span class="o">-</span><span class="mf">4.4311</span>  <span class="mf">3.1870</span> <span class="o">-</span><span class="mf">3.1660</span> <span class="o">-</span><span class="mf">0.5920</span>  <span class="mf">1.5078</span>
+ <span class="mf">4.2053</span> <span class="o">-</span><span class="mf">3.3191</span> <span class="o">-</span><span class="mf">5.5504</span>  <span class="mf">3.8447</span>  <span class="mf">0.1804</span> <span class="o">-</span><span class="mf">0.3768</span> <span class="o">-</span><span class="mf">2.1115</span>  <span class="mf">1.2076</span>  <span class="mf">0.7835</span> <span class="o">-</span><span class="mf">0.2130</span>
+<span class="o">-</span><span class="mf">0.0845</span>  <span class="mf">1.1393</span> <span class="o">-</span><span class="mf">1.1980</span> <span class="o">-</span><span class="mf">1.4200</span>  <span class="mf">5.3707</span> <span class="o">-</span><span class="mf">7.0641</span>  <span class="mf">3.1498</span>  <span class="mf">0.3214</span> <span class="o">-</span><span class="mf">0.7597</span> <span class="o">-</span><span class="mf">0.5166</span>
+<span class="o">-</span><span class="mf">1.7693</span>  <span class="mf">3.6513</span> <span class="o">-</span><span class="mf">1.2257</span> <span class="o">-</span><span class="mf">2.7599</span>  <span class="mf">0.5717</span>  <span class="mf">1.9529</span>  <span class="mf">0.0288</span>  <span class="mf">1.6213</span> <span class="o">-</span><span class="mf">2.4829</span>  <span class="mf">0.8814</span>
+ <span class="mf">2.4715</span>  <span class="mf">0.9770</span> <span class="o">-</span><span class="mf">1.7503</span> <span class="o">-</span><span class="mf">6.3837</span>  <span class="mf">5.4145</span>  <span class="mf">3.9171</span> <span class="o">-</span><span class="mf">2.4942</span> <span class="o">-</span><span class="mf">0.0617</span> <span class="o">-</span><span class="mf">1.1591</span> <span class="o">-</span><span class="mf">1.2998</span>
+ <span class="mf">0.2406</span> <span class="o">-</span><span class="mf">1.4899</span>  <span class="mf">0.6865</span>  <span class="mf">1.4984</span> <span class="o">-</span><span class="mf">2.3726</span> <span class="o">-</span><span class="mf">1.5439</span> <span class="o">-</span><span class="mf">1.2462</span>  <span class="mf">2.8251</span> <span class="o">-</span><span class="mf">1.3701</span> <span class="o">-</span><span class="mf">0.1096</span>
+<span class="o">-</span><span class="mf">0.8530</span>  <span class="mf">2.0953</span>  <span class="mf">0.8538</span> <span class="o">-</span><span class="mf">1.4266</span> <span class="o">-</span><span class="mf">2.5626</span>  <span class="mf">2.6562</span> <span class="o">-</span><span class="mf">0.0648</span>  <span class="mf">1.0633</span> <span class="o">-</span><span class="mf">0.1065</span> <span class="o">-</span><span class="mf">0.3606</span>
+ <span class="mf">0.0064</span> <span class="o">-</span><span class="mf">0.0095</span> <span class="o">-</span><span class="mf">0.4854</span>  <span class="mf">1.3470</span> <span class="o">-</span><span class="mf">0.3438</span>  <span class="mf">0.2617</span> <span class="o">-</span><span class="mf">1.1149</span>  <span class="mf">0.2907</span>  <span class="mf">0.4472</span> <span class="o">-</span><span class="mf">0.1843</span>
+<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">10</span><span class="n">x10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  1.737 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/numpy_extensions_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">numpy_extensions_tutorial.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/numpy_extensions_tutorial.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">numpy_extensions_tutorial.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_extension.html" class="btn btn-neutral float-right" title="Custom C extensions for pytorch" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reinforcement_q_learning_tutorial.html" class="btn btn-neutral" title="Reinforcement Learing (DQN) tutorial" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyTorch.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
