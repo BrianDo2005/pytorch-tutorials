@@ -40,7 +40,11 @@ import sphinx_rtd_theme
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.mathjax',
-              'sphinx_gallery.gen_gallery']
+              'sphinx_gallery.gen_gallery',
+              'sphinxcontrib.googleanalytics']
+
+googleanalytics_id = 'UA-47062272-3'
+googleanalytics_enabled = True
 
 sphinx_gallery_conf = {
     # path to your examples scripts

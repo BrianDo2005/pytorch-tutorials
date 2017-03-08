@@ -23,5 +23,5 @@ help:
 docs:
 	rm -rf docs
 	make html
-	touch .nojekyll
+	touch docs/.nojekyll
 	cp -r $(BUILDDIR)/html docs
