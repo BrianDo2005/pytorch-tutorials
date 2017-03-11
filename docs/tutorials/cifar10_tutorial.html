@@ -47,7 +47,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyTorch Tutorials  documentation" href="../index.html"/>
-        <link rel="up" title="Deep Learning with PyTorch" href="deep_learning_tutorial.html"/>
+        <link rel="up" title="Deep Learning with PyTorch: 60 Minute Blitz" href="deep_learning_tutorial.html"/>
         <link rel="next" title="PyTorch for former Torch users" href="former_torchies_tutorial.html"/>
         <link rel="prev" title="Neural Networks" href="neural_networks_tutorial.html"/> 
 
@@ -94,8 +94,9 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch</a><ul class="current">
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tensor_tutorial.html">What is PyTorch?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#getting-started">Getting Started</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#tensors">Tensors</a></li>
@@ -194,6 +195,36 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">jcjohnson&#8217;s PyTorch With Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#tensors">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#warm-up-numpy">Warm-up: numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-tensors">PyTorch: Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#autograd">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#nn-module"><cite>nn</cite> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-nn">PyTorch: nn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-optim">PyTorch: optim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-custom-nn-modules">PyTorch: Custom nn Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-control-flow-weight-sharing">PyTorch: Control Flow + Weight Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_examples.html">Pytorch Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#tensor">Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#autograd">Autograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#nn-module"><cite>nn</cite> module</a></li>
+</ul>
+</li>
+</ul>
 
             
           
@@ -223,7 +254,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="deep_learning_tutorial.html">Deep Learning with PyTorch</a> &raquo;</li>
+          <li><a href="deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a> &raquo;</li>
       
     <li>Training a classifier</li>
       <li class="wy-breadcrumbs-aside">
@@ -335,7 +366,7 @@ We transform them to Tensors of normalized range [-1, 1]</p>
 </div>
 <img alt="../_images/sphx_glr_cifar10_tutorial_001.png" class="align-center" src="../_images/sphx_glr_cifar10_tutorial_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">horse</span>   <span class="n">dog</span>   <span class="n">cat</span>  <span class="n">frog</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">dog</span>   <span class="n">car</span> <span class="n">plane</span>  <span class="n">bird</span>
 </pre></div>
 </div>
 </div>
@@ -414,18 +445,18 @@ network and optimize</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">2.229</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">4000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.919</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">6000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.722</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">8000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.632</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.569</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.542</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">2000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.449</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">4000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.438</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">6000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.393</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">8000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.350</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.318</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.324</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">2.204</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">4000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.845</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">6000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.669</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">8000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.594</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.520</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.472</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">2000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.392</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">4000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.372</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">6000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.334</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">8000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.305</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.271</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12000</span><span class="p">]</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">1.299</span>
 <span class="n">Finished</span> <span class="n">Training</span>
 </pre></div>
 </div>
@@ -466,7 +497,7 @@ So, let&#8217;s get the index of the highest energy:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Predicted</span><span class="p">:</span>    <span class="n">cat</span>   <span class="n">car</span>   <span class="n">car</span>  <span class="n">ship</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Predicted</span><span class="p">:</span>    <span class="n">cat</span>  <span class="n">ship</span>  <span class="n">ship</span> <span class="n">plane</span>
 </pre></div>
 </div>
 <p>The results seem pretty good.</p>
@@ -485,7 +516,7 @@ So, let&#8217;s get the index of the highest energy:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Accuracy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">network</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">10000</span> <span class="n">test</span> <span class="n">images</span><span class="p">:</span> <span class="mi">54</span> <span class="o">%</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Accuracy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">network</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">10000</span> <span class="n">test</span> <span class="n">images</span><span class="p">:</span> <span class="mi">57</span> <span class="o">%</span>
 </pre></div>
 </div>
 <p>That looks waaay better than chance, which is 10% accuracy (randomly picking
@@ -512,15 +543,15 @@ not perform well:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Accuracy</span> <span class="n">of</span> <span class="n">plane</span> <span class="p">:</span> <span class="mi">50</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">car</span> <span class="p">:</span> <span class="mi">60</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">bird</span> <span class="p">:</span> <span class="mi">42</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">cat</span> <span class="p">:</span> <span class="mi">25</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">deer</span> <span class="p">:</span> <span class="mi">40</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">dog</span> <span class="p">:</span> <span class="mi">65</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">frog</span> <span class="p">:</span> <span class="mi">78</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span> <span class="n">horse</span> <span class="p">:</span> <span class="mi">59</span> <span class="o">%</span>
-<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">ship</span> <span class="p">:</span> <span class="mi">60</span> <span class="o">%</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Accuracy</span> <span class="n">of</span> <span class="n">plane</span> <span class="p">:</span> <span class="mi">68</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">car</span> <span class="p">:</span> <span class="mi">71</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">bird</span> <span class="p">:</span> <span class="mi">35</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">cat</span> <span class="p">:</span> <span class="mi">46</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">deer</span> <span class="p">:</span> <span class="mi">46</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>   <span class="n">dog</span> <span class="p">:</span> <span class="mi">36</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">frog</span> <span class="p">:</span> <span class="mi">75</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span> <span class="n">horse</span> <span class="p">:</span> <span class="mi">66</span> <span class="o">%</span>
+<span class="n">Accuracy</span> <span class="n">of</span>  <span class="n">ship</span> <span class="p">:</span> <span class="mi">68</span> <span class="o">%</span>
 <span class="n">Accuracy</span> <span class="n">of</span> <span class="n">truck</span> <span class="p">:</span> <span class="mi">56</span> <span class="o">%</span>
 </pre></div>
 </div>
@@ -565,7 +596,7 @@ they need to be the same number), see what kind of speedup you get.</p>
 <li><a class="reference external" href="https://discuss.pytorch.org/">Discuss PyTorch on the Forums</a></li>
 <li><a class="reference external" href="http://pytorch.slack.com/messages/beginner/">Chat with other users on Slack</a></li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 1 minutes  52.754 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 1 minutes  55.804 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/cifar10_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">cifar10_tutorial.py</span></code></a></div>

@@ -47,7 +47,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyTorch Tutorials  documentation" href="../index.html"/>
-        <link rel="up" title="Deep Learning with PyTorch" href="deep_learning_tutorial.html"/>
+        <link rel="up" title="Deep Learning with PyTorch: 60 Minute Blitz" href="deep_learning_tutorial.html"/>
         <link rel="next" title="Training a classifier" href="cifar10_tutorial.html"/>
         <link rel="prev" title="Autograd: automatic differentiation" href="autograd_tutorial.html"/> 
 
@@ -94,8 +94,9 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch</a><ul class="current">
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tensor_tutorial.html">What is PyTorch?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#getting-started">Getting Started</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#tensors">Tensors</a></li>
@@ -194,6 +195,36 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">jcjohnson&#8217;s PyTorch With Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#tensors">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#warm-up-numpy">Warm-up: numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-tensors">PyTorch: Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#autograd">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#nn-module"><cite>nn</cite> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-nn">PyTorch: nn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-optim">PyTorch: optim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-custom-nn-modules">PyTorch: Custom nn Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-control-flow-weight-sharing">PyTorch: Control Flow + Weight Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_examples.html">Pytorch Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#tensor">Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#autograd">Autograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#nn-module"><cite>nn</cite> module</a></li>
+</ul>
+</li>
+</ul>
 
             
           
@@ -223,7 +254,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="deep_learning_tutorial.html">Deep Learning with PyTorch</a> &raquo;</li>
+          <li><a href="deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a> &raquo;</li>
       
     <li>Neural Networks</li>
       <li class="wy-breadcrumbs-aside">
@@ -338,7 +369,7 @@ You can use any of the Tensor operations in the <code class="docutils literal"><
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">0.0596</span>  <span class="mf">0.0743</span>  <span class="mf">0.1380</span>  <span class="mf">0.0640</span> <span class="o">-</span><span class="mf">0.0087</span>  <span class="mf">0.0063</span> <span class="o">-</span><span class="mf">0.1756</span>  <span class="mf">0.0381</span> <span class="o">-</span><span class="mf">0.0507</span>  <span class="mf">0.0705</span>
+ <span class="mf">0.0688</span> <span class="o">-</span><span class="mf">0.0414</span> <span class="o">-</span><span class="mf">0.1274</span>  <span class="mf">0.1181</span> <span class="o">-</span><span class="mf">0.1089</span>  <span class="mf">0.0146</span>  <span class="mf">0.0226</span>  <span class="mf">0.0096</span>  <span class="mf">0.0444</span> <span class="o">-</span><span class="mf">0.0068</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x10</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -412,7 +443,7 @@ between the input and the target.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">38.4680</span>
+ <span class="mf">38.4679</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -435,9 +466,9 @@ w.r.t. the loss, and all Variables in the graph will have their
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">MSELoss</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x12c64bc48</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">Linear</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x12c64bb88</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">Threshold</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x12c64bac8</span><span class="o">&gt;</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">MSELoss</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecc48</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">Linear</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecb88</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">Threshold</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecac8</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -472,12 +503,13 @@ gradients before and after the backward.</p>
 
 <span class="n">conv1</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">grad</span> <span class="n">after</span> <span class="n">backward</span>
 <span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.1121</span>
- <span class="mf">0.0761</span>
- <span class="mf">0.0167</span>
- <span class="mf">0.0624</span>
-<span class="o">-</span><span class="mf">0.0066</span>
-<span class="o">-</span><span class="mf">0.0408</span>
+<span class="mf">1.00000e-02</span> <span class="o">*</span>
+  <span class="mf">0.8573</span>
+ <span class="o">-</span><span class="mf">0.2858</span>
+  <span class="mf">2.8886</span>
+  <span class="mf">3.3070</span>
+ <span class="o">-</span><span class="mf">7.4440</span>
+ <span class="o">-</span><span class="mf">6.6386</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -523,7 +555,7 @@ implements all these methods. Using it is very simple:</p>
 <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>    <span class="c1"># Does the update</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.028 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.033 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/neural_networks_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">neural_networks_tutorial.py</span></code></a></div>

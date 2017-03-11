@@ -17,12 +17,16 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+
 import torch
 import glob
 import shutil
+from custom_directives import IncludeDirective, GalleryItemDirective
+
+
 try:
     import torchvision
 except ImportError:
@@ -48,9 +52,9 @@ googleanalytics_enabled = True
 
 sphinx_gallery_conf = {
     # path to your examples scripts
-    'examples_dirs': 'tutorial_source',
+    'examples_dirs': ['tutorial_source', 'examples_source'],
     # path where to save gallery generated examples
-    'gallery_dirs': 'tutorials',
+    'gallery_dirs': ['tutorials', 'examples'],
     'filename_pattern': '_tutorial.py'
 }
 
@@ -182,7 +186,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PyTorchTutorials.tex', 'PyTorch Tutorials Documentation',
+    (master_doc, 'PyTorchTutorials.tex', 'PyTorch Tutorials',
      'Sasank, PyTorch contributors', 'manual'),
 ]
 
@@ -192,7 +196,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pytorchtutorials', 'PyTorch Tutorials Documentation',
+    (master_doc, 'pytorchtutorials', 'PyTorch Tutorials',
      [author], 1)
 ]
 
@@ -203,10 +207,12 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PyTorchTutorials', 'PyTorch Tutorials Documentation',
+    (master_doc, 'PyTorchTutorials', 'PyTorch Tutorials',
      author, 'PyTorchTutorials', 'One line description of project.',
      'Miscellaneous'),
 ]
 
 
-
+def setup(app):
+    app.add_directive('includenodoc', IncludeDirective)
+    app.add_directive('galleryitem', GalleryItemDirective)

@@ -185,7 +185,7 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use PyTorch to train a DQN agent on the CartPole-v0 task from the `O...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use PyTorch to train a Deep Q Learning (DQN) agent on the CartPole-v...">
 
 .. only:: html
 

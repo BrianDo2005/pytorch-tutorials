@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-47062272-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PyTorch: Custom nn Modules &mdash; PyTorch Tutorials  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PyTorch Tutorials  documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyTorch Tutorials
+          
+
+          
+            
+            <img src="../../_static/pytorch-logo-dark.svg" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/tensor_tutorial.html">What is PyTorch?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#tensors">Tensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#operations">Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/autograd_tutorial.html#gradients">Gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/neural_networks_tutorial.html">Neural Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/neural_networks_tutorial.html#define-the-network">Define the network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/neural_networks_tutorial.html#loss-function">Loss Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/neural_networks_tutorial.html#backprop">Backprop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/neural_networks_tutorial.html#update-the-weights">Update the weights</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html">Training a classifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#what-about-data">What about data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#training-an-image-classifier">Training an image classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#loading-and-normalizing-cifar10">1. Loading and normalizing CIFAR10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#define-a-convolution-neural-network">2. Define a Convolution Neural Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#define-a-loss-function-and-optimizer">3. Define a Loss function and optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#train-the-network">4. Train the network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#test-the-network-on-the-test-data">5. Test the network on the test data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#training-on-gpu">Training on GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/cifar10_tutorial.html#where-do-i-go-next">Where do I go next?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/former_torchies_tutorial.html">PyTorch for former Torch users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#inplace-out-of-place">Inplace / Out-of-place</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#zero-indexing">Zero Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#no-camel-casing">No camel casing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/torchies_autograd_tutorial.html">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_autograd_tutorial.html#gradients">Gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/torchies_nn_tutorial.html">nn package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_nn_tutorial.html#example-1-convnet">Example 1: ConvNet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_nn_tutorial.html#forward-and-backward-function-hooks">Forward and Backward Function Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_nn_tutorial.html#example-2-recurrent-net">Example 2: Recurrent Net</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/torchies_parallelism_tutorial.html">Multi-GPU examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_parallelism_tutorial.html#dataparallel">DataParallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/torchies_parallelism_tutorial.html#part-of-the-model-on-cpu-and-part-on-the-gpu">Part of the model on CPU and part on the GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#q-network">Q-network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#input-extraction">Input extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#hyperparameters-and-utilities">Hyperparameters and utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#training-loop">Training loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/numpy_extensions_tutorial.html">Creating extensions using numpy and scipy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/numpy_extensions_tutorial.html#parameter-less-example">Parameter-less example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/numpy_extensions_tutorial.html#parametrized-example">Parametrized example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/c_extension.html">Custom C extensions for pytorch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">jcjohnson&#8217;s PyTorch With Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../jcjohnson_tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_tutorial.html#tensors">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#warm-up-numpy">Warm-up: numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-tensors">PyTorch: Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_tutorial.html#autograd">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_tutorial.html#nn-module"><cite>nn</cite> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-nn">PyTorch: nn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-optim">PyTorch: optim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-custom-nn-modules">PyTorch: Custom nn Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jcjohnson_tutorial.html#pytorch-control-flow-weight-sharing">PyTorch: Control Flow + Weight Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jcjohnson_examples.html">Pytorch Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_examples.html#tensor">Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_examples.html#autograd">Autograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jcjohnson_examples.html#nn-module"><cite>nn</cite> module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">PyTorch Tutorials</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>PyTorch: Custom nn Modules</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/examples/nn/two_layer_net_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pytorch-custom-nn-modules">
+<span id="sphx-glr-examples-nn-two-layer-net-module-py"></span><h1>PyTorch: Custom nn Modules<a class="headerlink" href="#pytorch-custom-nn-modules" title="Permalink to this headline">¶</a></h1>
+<p>A fully-connected ReLU network with one hidden layer, trained to predict y from x
+by minimizing squared Euclidean distance.</p>
+<p>This implementation defines the model as a custom Module subclass. Whenever you
+want a model more complex than a simple sequence of existing Modules you will
+need to define your model this way.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+
+<span class="k">class</span> <span class="nc">TwoLayerNet</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    In the constructor we instantiate two nn.Linear modules and assign them as</span>
+<span class="sd">    member variables.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">TwoLayerNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">linear1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    In the forward function we accept a Variable of input data and we must return</span>
+<span class="sd">    a Variable of output data. We can use Modules defined in the constructor as</span>
+<span class="sd">    well as arbitrary operators on Variables.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h_relu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span><span class="p">(</span><span class="n">h_relu</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y_pred</span>
+
+
+<span class="c1"># N is batch size; D_in is input dimension;</span>
+<span class="c1"># H is hidden dimension; D_out is output dimension.</span>
+<span class="n">N</span><span class="p">,</span> <span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">D_out</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># Create random Tensors to hold inputs and outputs, and wrap them in Variables</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D_in</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D_out</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1"># Construct our model by instantiating the class defined above</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">TwoLayerNet</span><span class="p">(</span><span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">)</span>
+
+<span class="c1"># Construct our loss function and an Optimizer. The call to model.parameters()</span>
+<span class="c1"># in the SGD constructor will contain the learnable parameters of the two</span>
+<span class="c1"># nn.Linear modules which are members of the model.</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">size_average</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+  <span class="c1"># Forward pass: Compute predicted y by passing x to the model</span>
+  <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+  <span class="c1"># Compute and print loss</span>
+  <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="c1"># Zero gradients, perform a backward pass, and update the weights.</span>
+  <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+  <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+  <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../../_downloads/two_layer_net_module.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">two_layer_net_module.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../../_downloads/two_layer_net_module.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">two_layer_net_module.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyTorch.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

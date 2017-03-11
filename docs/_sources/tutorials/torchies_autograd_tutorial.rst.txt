@@ -157,7 +157,7 @@ so it has a creator
 
  Out::
 
-    <torch.autograd._functions.basic_ops.AddConstant object at 0x11a0cae88>
+    <torch.autograd._functions.basic_ops.AddConstant object at 0x11df65ac8>
 
 
 More operations on y:
@@ -290,8 +290,8 @@ just backprop random gradients
  Out::
 
     Variable containing:
-     1.7438  2.6209
-     2.2895  2.8164
+     0.3102  0.3882
+     0.3056  2.7914
     [torch.FloatTensor of size 2x2]
 
 

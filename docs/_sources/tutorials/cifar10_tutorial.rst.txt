@@ -146,7 +146,7 @@ Let us show some of the training images, for fun.
 
  Out::
 
-    horse   dog   cat  frog
+    dog   car plane  bird
 
 
 2. Define a Convolution Neural Network
@@ -257,18 +257,18 @@ network and optimize
 
  Out::
 
-    [1,  2000] loss: 2.229
-    [1,  4000] loss: 1.919
-    [1,  6000] loss: 1.722
-    [1,  8000] loss: 1.632
-    [1, 10000] loss: 1.569
-    [1, 12000] loss: 1.542
-    [2,  2000] loss: 1.449
-    [2,  4000] loss: 1.438
-    [2,  6000] loss: 1.393
-    [2,  8000] loss: 1.350
-    [2, 10000] loss: 1.318
-    [2, 12000] loss: 1.324
+    [1,  2000] loss: 2.204
+    [1,  4000] loss: 1.845
+    [1,  6000] loss: 1.669
+    [1,  8000] loss: 1.594
+    [1, 10000] loss: 1.520
+    [1, 12000] loss: 1.472
+    [2,  2000] loss: 1.392
+    [2,  4000] loss: 1.372
+    [2,  6000] loss: 1.334
+    [2,  8000] loss: 1.305
+    [2, 10000] loss: 1.271
+    [2, 12000] loss: 1.299
     Finished Training
 
 
@@ -347,7 +347,7 @@ So, let's get the index of the highest energy:
 
  Out::
 
-    Predicted:    cat   car   car  ship
+    Predicted:    cat  ship  ship plane
 
 
 The results seem pretty good.
@@ -379,7 +379,7 @@ Let us look at how the network performs on the whole dataset.
 
  Out::
 
-    Accuracy of the network on the 10000 test images: 54 %
+    Accuracy of the network on the 10000 test images: 57 %
 
 
 That looks waaay better than chance, which is 10% accuracy (randomly picking
@@ -419,15 +419,15 @@ not perform well:
 
  Out::
 
-    Accuracy of plane : 50 %
-    Accuracy of   car : 60 %
-    Accuracy of  bird : 42 %
-    Accuracy of   cat : 25 %
-    Accuracy of  deer : 40 %
-    Accuracy of   dog : 65 %
-    Accuracy of  frog : 78 %
-    Accuracy of horse : 59 %
-    Accuracy of  ship : 60 %
+    Accuracy of plane : 68 %
+    Accuracy of   car : 71 %
+    Accuracy of  bird : 35 %
+    Accuracy of   cat : 46 %
+    Accuracy of  deer : 46 %
+    Accuracy of   dog : 36 %
+    Accuracy of  frog : 75 %
+    Accuracy of horse : 66 %
+    Accuracy of  ship : 68 %
     Accuracy of truck : 56 %
 
 
@@ -488,7 +488,7 @@ Where do I go next?
 .. _Chat with other users on Slack: http://pytorch.slack.com/messages/beginner/
 
 
-**Total running time of the script:** ( 1 minutes  52.754 seconds)
+**Total running time of the script:** ( 1 minutes  55.804 seconds)
 
 
 

@@ -13,7 +13,7 @@ GH_PAGES_SOURCES = $(SOURCEDIR) Makefile
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile docs
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
@@ -23,5 +23,5 @@ help:
 docs:
 	rm -rf docs
 	make html
-	touch docs/.nojekyll
 	cp -r $(BUILDDIR)/html docs
+	touch docs/.nojekyll

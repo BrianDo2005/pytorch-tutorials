@@ -94,8 +94,9 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch</a><ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="deep_learning_tutorial.html">Deep Learning with PyTorch: 60 Minute Blitz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tensor_tutorial.html">What is PyTorch?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tensor_tutorial.html#getting-started">Getting Started</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="tensor_tutorial.html#tensors">Tensors</a></li>
@@ -191,6 +192,36 @@
 <li class="toctree-l1"><a class="reference internal" href="c_extension.html">Custom C extensions for pytorch</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">jcjohnson&#8217;s PyTorch With Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#tensors">Tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#warm-up-numpy">Warm-up: numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-tensors">PyTorch: Tensors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#autograd">Autograd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_tutorial.html#nn-module"><cite>nn</cite> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-nn">PyTorch: nn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-optim">PyTorch: optim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-custom-nn-modules">PyTorch: Custom nn Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../jcjohnson_tutorial.html#pytorch-control-flow-weight-sharing">PyTorch: Control Flow + Weight Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jcjohnson_examples.html">Pytorch Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#tensor">Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#autograd">Autograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jcjohnson_examples.html#nn-module"><cite>nn</cite> module</a></li>
 </ul>
 </li>
 </ul>
@@ -373,7 +404,7 @@ sample through the ConvNet.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">2.3487</span>
+ <span class="mf">2.2292</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -394,8 +425,8 @@ way through the ConvNet to it’s weights</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.8322298847980676</span>
-<span class="mf">0.15777777820105476</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.7787488608735864</span>
+<span class="mf">0.382481510321296</span>
 </pre></div>
 </div>
 </div>
@@ -437,7 +468,7 @@ output:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 input size: torch.Size([1, 10, 12, 12])
 output size: torch.Size([1, 20, 8, 8])
-output norm: 11.755942025545904
+output norm: 17.17489636659921
 </pre></div>
 </div>
 <p>We register a backward hook on conv2 and print some information</p>
@@ -470,7 +501,7 @@ output:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 input size: torch.Size([1, 10, 12, 12])
 output size: torch.Size([1, 20, 8, 8])
-output norm: 11.755942025545904
+output norm: 17.17489636659921
 Inside Conv2d backward
 Inside class:Conv2d
 
@@ -481,7 +512,7 @@ grad_output[0]:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 grad_input size: torch.Size([1, 10, 12, 12])
 grad_output size: torch.Size([1, 20, 8, 8])
-grad_input norm: 0.03129695009713234
+grad_input norm: 0.0855098630309808
 </pre></div>
 </div>
 <p>A full and working MNIST example is located here
@@ -538,7 +569,7 @@ Recurrent Nets</p>
 <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.016 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.017 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/torchies_nn_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">torchies_nn_tutorial.py</span></code></a></div>

@@ -145,7 +145,7 @@ The input to the forward is an ``autograd.Variable``, and so is the output.
  Out::
 
     Variable containing:
-     0.0596  0.0743  0.1380  0.0640 -0.0087  0.0063 -0.1756  0.0381 -0.0507  0.0705
+     0.0688 -0.0414 -0.1274  0.1181 -0.1089  0.0146  0.0226  0.0096  0.0444 -0.0068
     [torch.FloatTensor of size 1x10]
 
 
@@ -237,7 +237,7 @@ For example:
  Out::
 
     Variable containing:
-     38.4680
+     38.4679
     [torch.FloatTensor of size 1]
 
 
@@ -275,9 +275,9 @@ For illustration, let us follow a few steps backward:
 
  Out::
 
-    <torch.nn._functions.thnn.auto.MSELoss object at 0x12c64bc48>
-    <torch.nn._functions.linear.Linear object at 0x12c64bb88>
-    <torch.nn._functions.thnn.auto.Threshold object at 0x12c64bac8>
+    <torch.nn._functions.thnn.auto.MSELoss object at 0x1288ecc48>
+    <torch.nn._functions.linear.Linear object at 0x1288ecb88>
+    <torch.nn._functions.thnn.auto.Threshold object at 0x1288ecac8>
 
 
 Backprop
@@ -326,12 +326,13 @@ gradients before and after the backward.
 
     conv1.bias.grad after backward
     Variable containing:
-    -0.1121
-     0.0761
-     0.0167
-     0.0624
-    -0.0066
-    -0.0408
+    1.00000e-02 *
+      0.8573
+     -0.2858
+      2.8886
+      3.3070
+     -7.4440
+     -6.6386
     [torch.FloatTensor of size 6]
 
 
@@ -389,7 +390,7 @@ implements all these methods. Using it is very simple:
 
 
 
-**Total running time of the script:** ( 0 minutes  0.028 seconds)
+**Total running time of the script:** ( 0 minutes  0.033 seconds)
 
 
 
