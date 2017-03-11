@@ -52,10 +52,11 @@ googleanalytics_enabled = True
 
 sphinx_gallery_conf = {
     # path to your examples scripts
-    'examples_dirs': ['tutorial_source', 'examples_source'],
+    'examples_dirs': ['tutorial_source', 'examples_source',
+                      'practical-pytorch-source'],
     # path where to save gallery generated examples
-    'gallery_dirs': ['tutorials', 'examples'],
-    'filename_pattern': '_tutorial.py'
+    'gallery_dirs': ['tutorials', 'examples', 'practical-pytorch'],
+    'filename_pattern': 'tutorial.py'
 }
 
 # Create tutorials folder if it doesn't exist

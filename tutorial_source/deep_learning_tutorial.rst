@@ -1,5 +1,5 @@
-Deep Learning with PyTorch: 60 Minute Blitz
--------------------------------------------
+Deep Learning with PyTorch: A 60 Minute Blitz
+---------------------------------------------
 
 Goal of this tutorial:
 
