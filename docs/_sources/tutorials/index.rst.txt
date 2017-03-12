@@ -213,13 +213,13 @@
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: tutorials_python.zip <//Users/Sasank/work/software/pytorch all/tutorial-docs/tutorials/tutorials_python.zip>`
+    :download:`Download all examples in Python source code: tutorials_python.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/tutorials/tutorials_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip <//Users/Sasank/work/software/pytorch all/tutorial-docs/tutorials/tutorials_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/tutorials/tutorials_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

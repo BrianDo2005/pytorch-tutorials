@@ -259,23 +259,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/char-rnn-generation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -340,11 +340,11 @@ Torch.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">0.7964</span>  <span class="mf">0.1739</span>  <span class="mf">0.5991</span>  <span class="mf">0.6454</span> <span class="o">-</span><span class="mf">0.6923</span>  <span class="mf">0.8569</span> <span class="o">-</span><span class="mf">0.3512</span>
- <span class="mf">0.1530</span>  <span class="mf">1.4548</span> <span class="o">-</span><span class="mf">1.0809</span>  <span class="mf">0.0914</span>  <span class="mf">0.8779</span>  <span class="mf">0.5583</span>  <span class="mf">0.2933</span>
- <span class="mf">0.4415</span>  <span class="mf">1.2224</span>  <span class="mf">0.5183</span>  <span class="mf">0.7271</span>  <span class="mf">0.6048</span> <span class="o">-</span><span class="mf">0.2417</span>  <span class="mf">0.0855</span>
- <span class="mf">2.3850</span>  <span class="mf">1.4425</span>  <span class="mf">0.6533</span> <span class="o">-</span><span class="mf">0.0936</span>  <span class="mf">0.6942</span> <span class="o">-</span><span class="mf">0.7363</span> <span class="o">-</span><span class="mf">1.4042</span>
-<span class="o">-</span><span class="mf">0.8253</span>  <span class="mf">0.1168</span>  <span class="mf">0.5201</span>  <span class="mf">0.5049</span> <span class="o">-</span><span class="mf">0.0873</span> <span class="o">-</span><span class="mf">1.0270</span> <span class="o">-</span><span class="mf">0.1269</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">0.1020</span> <span class="o">-</span><span class="mf">0.1580</span> <span class="o">-</span><span class="mf">0.9770</span>  <span class="mf">0.1800</span>  <span class="mf">0.0956</span>  <span class="mf">0.2649</span>  <span class="mf">0.8006</span>
+<span class="o">-</span><span class="mf">0.7885</span> <span class="o">-</span><span class="mf">0.1270</span> <span class="o">-</span><span class="mf">0.6813</span> <span class="o">-</span><span class="mf">0.6654</span> <span class="o">-</span><span class="mf">1.4251</span> <span class="o">-</span><span class="mf">1.2078</span> <span class="o">-</span><span class="mf">0.2661</span>
+ <span class="mf">0.4538</span>  <span class="mf">0.8596</span> <span class="o">-</span><span class="mf">0.5528</span>  <span class="mf">1.2724</span>  <span class="mf">0.0159</span>  <span class="mf">0.0084</span> <span class="o">-</span><span class="mf">0.4766</span>
+<span class="o">-</span><span class="mf">0.8973</span> <span class="o">-</span><span class="mf">1.0791</span> <span class="o">-</span><span class="mf">0.7404</span>  <span class="mf">0.8275</span> <span class="o">-</span><span class="mf">0.3448</span> <span class="o">-</span><span class="mf">0.4006</span>  <span class="mf">0.0618</span>
+ <span class="mf">1.5292</span> <span class="o">-</span><span class="mf">0.9135</span> <span class="o">-</span><span class="mf">0.7565</span>  <span class="mf">1.5499</span> <span class="o">-</span><span class="mf">0.9108</span>  <span class="mf">0.7580</span> <span class="o">-</span><span class="mf">0.7581</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">5</span><span class="n">x7</span><span class="p">]</span>
 
 <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
@@ -534,7 +534,11 @@ retain it’s type.</p>
     <span class="c1"># being a torch.LongTensor</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.008 seconds)</p>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span>&lt;class &#39;torch.cuda.LongTensor&#39;&gt;
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.009 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/torchies_tensor_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">torchies_tensor_tutorial.py</span></code></a></div>

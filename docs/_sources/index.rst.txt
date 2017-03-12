@@ -6,6 +6,8 @@ site so that they are easily browsable and searchable. For almost all
 the tutorials/examples, you will find runnable jupyter notebook/python source 
 code downloads at the end of the tutorial/example. 
 
+Please send your feedback to `sasankchilamkurthy@gmail.com <mailto:sasankchilamkurthy@gmail.com>`_
+
 
 Tutorials
 ---------
@@ -71,8 +73,11 @@ Applying recurrent neural networks to natural language tasks, from
 classification to generation.
 
 .. galleryitem:: practical-pytorch/char-rnn-classification-tutorial.py
+
 .. galleryitem:: practical-pytorch/char-rnn-generation-tutorial.py
-.. galleryitem:: practical-pytorch/seq2seq-translation.py
+   :figure: _static/img/char_rnn_classification.png
+.. galleryitem:: practical-pytorch/seq2seq-translation-tutorial.py
+   :figure: _static/img/seq2seq_flat.png
 
 .. raw:: html
 
@@ -96,6 +101,4 @@ classification to generation.
 
    practical-pytorch/char-rnn-classification-tutorial
    practical-pytorch/char-rnn-generation-tutorial
-   practical-pytorch/seq2seq-translation
-
-Please send your feedback to `sasankchilamkurthy@gmail.com <mailto:sasankchilamkurthy@gmail.com>`_
+   practical-pytorch/seq2seq-translation-tutorial

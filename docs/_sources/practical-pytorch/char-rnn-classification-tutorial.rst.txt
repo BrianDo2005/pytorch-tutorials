@@ -337,10 +337,10 @@ pre-computing batches of Tensors.
     Variable containing:
 
     Columns 0 to 9 
-    -2.8711 -3.0214 -2.8893 -2.8811 -2.9572 -2.9171 -2.9322 -2.8884 -2.7963 -2.9060
+    -2.9330 -2.8728 -2.9113 -2.9039 -2.8605 -2.8942 -2.7865 -2.8680 -2.8434 -2.8075
 
     Columns 10 to 17 
-    -2.8758 -2.8605 -2.8460 -2.8736 -2.7937 -2.9295 -2.8435 -2.9723
+    -2.8561 -2.9533 -2.9188 -2.9902 -2.8859 -2.9795 -2.9699 -2.8212
     [torch.FloatTensor of size 1x18]
 
 
@@ -381,7 +381,7 @@ of the greatest value:
 
  Out::
 
-    ('Russian', 14)
+    ('German', 6)
 
 
 We will also want a quick way to get a training example (a name and its
@@ -418,16 +418,16 @@ language):
 
  Out::
 
-    category = Greek / line = Rousses
-    category = Greek / line = Koutsoubos
-    category = Vietnamese / line = Vuu
-    category = Vietnamese / line = Mach
-    category = Korean / line = So
-    category = German / line = Dirchs
-    category = German / line = Peters
-    category = Chinese / line = Ang
-    category = Greek / line = Stavropoulos
-    category = Scottish / line = Macdonald
+    category = English / line = Cockle
+    category = Spanish / line = Cabello
+    category = French / line = Bonnaire
+    category = English / line = Pankhurst
+    category = French / line = Lestrange
+    category = Japanese / line = Kakinomoto
+    category = Scottish / line = Scott
+    category = Portuguese / line = Delgado
+    category = French / line = Gagnier
+    category = Irish / line = Maurice
 
 
 Training the Network
@@ -557,26 +557,26 @@ average of the loss.
 
  Out::
 
-    5000 5% (0m 8s) 2.6630 Antwerp / French ✗ (Dutch)
-    10000 10% (0m 15s) 3.0226 Tunneson / Scottish ✗ (Dutch)
-    15000 15% (0m 22s) 2.2953 Aitken / Dutch ✗ (Scottish)
-    20000 20% (0m 29s) 1.6609 O'Connell / Irish ✓
-    25000 25% (0m 37s) 2.8160 Walker / Russian ✗ (Scottish)
-    30000 30% (0m 45s) 0.5717 Wan / Chinese ✓
-    35000 35% (0m 52s) 1.5315 Connolly / English ✗ (Irish)
-    40000 40% (1m 0s) 0.8137 Spyridis / Greek ✓
-    45000 45% (1m 7s) 3.7142 Ogtrop / Russian ✗ (Dutch)
-    50000 50% (1m 15s) 1.1506 Damhan / Arabic ✗ (Irish)
-    55000 55% (1m 24s) 0.6505 Escamilla / Spanish ✓
-    60000 60% (1m 33s) 2.7101 Asch / Scottish ✗ (Dutch)
-    65000 65% (1m 41s) 0.0203 Matsoukis / Greek ✓
-    70000 70% (1m 48s) 1.2463 Sokolof / Russian ✗ (Polish)
-    75000 75% (1m 55s) 0.4066 Sokolsky / Polish ✓
-    80000 80% (2m 3s) 1.1632 Farley / English ✓
-    85000 85% (2m 13s) 0.2496 Jirnyakov / Russian ✓
-    90000 90% (2m 21s) 2.3100 Braden / Dutch ✗ (Irish)
-    95000 95% (2m 29s) 1.8034 Peatain / French ✗ (Irish)
-    100000 100% (2m 37s) 1.7100 Segher / Arabic ✗ (Dutch)
+    5000 5% (0m 8s) 2.9065 Burns / Greek ✗ (Scottish)
+    10000 10% (0m 15s) 3.1260 Stegon / Irish ✗ (Czech)
+    15000 15% (0m 23s) 1.1745 Soares / Portuguese ✓
+    20000 20% (0m 31s) 3.3941 Vann / Vietnamese ✗ (Dutch)
+    25000 25% (0m 38s) 1.5410 Mcgregor / Scottish ✓
+    30000 30% (0m 45s) 1.0140 Coilean / Irish ✓
+    35000 35% (0m 52s) 1.1825 Blazek / Polish ✗ (Czech)
+    40000 40% (0m 59s) 1.6214 Rana / Spanish ✓
+    45000 45% (1m 6s) 2.5459 Abel / Czech ✗ (Spanish)
+    50000 50% (1m 13s) 3.0860 Marubeni / Italian ✗ (Japanese)
+    55000 55% (1m 20s) 0.8990 Kwak / Korean ✓
+    60000 60% (1m 27s) 0.4619 Dam / Vietnamese ✓
+    65000 65% (1m 34s) 3.0947 Jarzembowski / Polish ✗ (Czech)
+    70000 70% (1m 41s) 0.4072 Geng / Chinese ✓
+    75000 75% (1m 48s) 0.5396 Rademacher / German ✓
+    80000 80% (1m 55s) 3.2378 Kalb / Scottish ✗ (Arabic)
+    85000 85% (2m 2s) 2.1645 Pander / German ✗ (Dutch)
+    90000 90% (2m 10s) 1.8379 Eda / Spanish ✗ (Japanese)
+    95000 95% (2m 17s) 1.4721 Forth / English ✓
+    100000 100% (2m 25s) 0.9956 Di mercurio / Italian ✓
 
 
 Plotting the Results
@@ -661,6 +661,7 @@ matrix a bunch of samples are run through the network with
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
 
+    # sphinx_gallery_thumbnail_number = 2
     plt.show()
 
 
@@ -717,19 +718,19 @@ Running on User Input
  Out::
 
     > Dovesky
-    (-1.02) Russian
-    (-1.20) Czech
-    (-1.55) Polish
+    (-0.80) Russian
+    (-0.95) Czech
+    (-2.45) English
 
     > Jackson
-    (-0.27) Scottish
-    (-2.13) English
-    (-3.07) Russian
+    (-0.24) Scottish
+    (-2.31) English
+    (-3.26) Korean
 
     > Satoshi
-    (-1.48) Italian
-    (-1.58) Arabic
-    (-1.74) Japanese
+    (-0.37) Arabic
+    (-2.22) Japanese
+    (-2.27) Italian
 
 
 The final versions of the scripts `in the Practical PyTorch
@@ -775,7 +776,7 @@ Exercises
    -  Combine multiple of these RNNs as a higher level network
 
 
-**Total running time of the script:** ( 2 minutes  46.915 seconds)
+**Total running time of the script:** ( 2 minutes  34.912 seconds)
 
 
 

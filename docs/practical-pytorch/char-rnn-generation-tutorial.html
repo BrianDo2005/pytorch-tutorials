@@ -47,7 +47,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyTorch Tutorials  documentation" href="../index.html"/>
-        <link rel="next" title="Translation with a Sequence to Sequence Network and Attention" href="seq2seq-translation.html"/>
+        <link rel="next" title="Translation with a Sequence to Sequence Network and Attention" href="seq2seq-translation-tutorial.html"/>
         <link rel="prev" title="Classifying Names with a Character-Level RNN" href="char-rnn-classification-tutorial.html"/> 
 
   
@@ -258,23 +258,23 @@
 <li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -621,26 +621,26 @@ in <code class="docutils literal"><span class="pre">all_losses</span></code> for
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">m</span> <span class="mi">17</span><span class="n">s</span> <span class="p">(</span><span class="mi">5000</span> <span class="mi">5</span><span class="o">%</span><span class="p">)</span> <span class="mf">3.4420</span>
-<span class="mi">0</span><span class="n">m</span> <span class="mi">35</span><span class="n">s</span> <span class="p">(</span><span class="mi">10000</span> <span class="mi">10</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.6013</span>
-<span class="mi">0</span><span class="n">m</span> <span class="mi">58</span><span class="n">s</span> <span class="p">(</span><span class="mi">15000</span> <span class="mi">15</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.0107</span>
-<span class="mi">1</span><span class="n">m</span> <span class="mi">17</span><span class="n">s</span> <span class="p">(</span><span class="mi">20000</span> <span class="mi">20</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.9268</span>
-<span class="mi">1</span><span class="n">m</span> <span class="mi">36</span><span class="n">s</span> <span class="p">(</span><span class="mi">25000</span> <span class="mi">25</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.1715</span>
-<span class="mi">1</span><span class="n">m</span> <span class="mi">55</span><span class="n">s</span> <span class="p">(</span><span class="mi">30000</span> <span class="mi">30</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.2158</span>
-<span class="mi">2</span><span class="n">m</span> <span class="mi">14</span><span class="n">s</span> <span class="p">(</span><span class="mi">35000</span> <span class="mi">35</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.0807</span>
-<span class="mi">2</span><span class="n">m</span> <span class="mi">34</span><span class="n">s</span> <span class="p">(</span><span class="mi">40000</span> <span class="mi">40</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.4096</span>
-<span class="mi">2</span><span class="n">m</span> <span class="mi">57</span><span class="n">s</span> <span class="p">(</span><span class="mi">45000</span> <span class="mi">45</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.7588</span>
-<span class="mi">3</span><span class="n">m</span> <span class="mi">17</span><span class="n">s</span> <span class="p">(</span><span class="mi">50000</span> <span class="mi">50</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.6886</span>
-<span class="mi">3</span><span class="n">m</span> <span class="mi">38</span><span class="n">s</span> <span class="p">(</span><span class="mi">55000</span> <span class="mi">55</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.4152</span>
-<span class="mi">3</span><span class="n">m</span> <span class="mi">58</span><span class="n">s</span> <span class="p">(</span><span class="mi">60000</span> <span class="mi">60</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.1335</span>
-<span class="mi">4</span><span class="n">m</span> <span class="mi">17</span><span class="n">s</span> <span class="p">(</span><span class="mi">65000</span> <span class="mi">65</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.7292</span>
-<span class="mi">4</span><span class="n">m</span> <span class="mi">36</span><span class="n">s</span> <span class="p">(</span><span class="mi">70000</span> <span class="mi">70</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.7258</span>
-<span class="mi">4</span><span class="n">m</span> <span class="mi">58</span><span class="n">s</span> <span class="p">(</span><span class="mi">75000</span> <span class="mi">75</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.3575</span>
-<span class="mi">5</span><span class="n">m</span> <span class="mi">19</span><span class="n">s</span> <span class="p">(</span><span class="mi">80000</span> <span class="mi">80</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.8861</span>
-<span class="mi">5</span><span class="n">m</span> <span class="mi">40</span><span class="n">s</span> <span class="p">(</span><span class="mi">85000</span> <span class="mi">85</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.3235</span>
-<span class="mi">6</span><span class="n">m</span> <span class="mi">5</span><span class="n">s</span> <span class="p">(</span><span class="mi">90000</span> <span class="mi">90</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.6814</span>
-<span class="mi">6</span><span class="n">m</span> <span class="mi">23</span><span class="n">s</span> <span class="p">(</span><span class="mi">95000</span> <span class="mi">95</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.7665</span>
-<span class="mi">6</span><span class="n">m</span> <span class="mi">42</span><span class="n">s</span> <span class="p">(</span><span class="mi">100000</span> <span class="mi">100</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.1817</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">m</span> <span class="mi">11</span><span class="n">s</span> <span class="p">(</span><span class="mi">5000</span> <span class="mi">5</span><span class="o">%</span><span class="p">)</span> <span class="mf">3.0420</span>
+<span class="mi">0</span><span class="n">m</span> <span class="mi">22</span><span class="n">s</span> <span class="p">(</span><span class="mi">10000</span> <span class="mi">10</span><span class="o">%</span><span class="p">)</span> <span class="mf">3.3880</span>
+<span class="mi">0</span><span class="n">m</span> <span class="mi">34</span><span class="n">s</span> <span class="p">(</span><span class="mi">15000</span> <span class="mi">15</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.6794</span>
+<span class="mi">0</span><span class="n">m</span> <span class="mi">45</span><span class="n">s</span> <span class="p">(</span><span class="mi">20000</span> <span class="mi">20</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.8188</span>
+<span class="mi">0</span><span class="n">m</span> <span class="mi">57</span><span class="n">s</span> <span class="p">(</span><span class="mi">25000</span> <span class="mi">25</span><span class="o">%</span><span class="p">)</span> <span class="mf">3.2180</span>
+<span class="mi">1</span><span class="n">m</span> <span class="mi">9</span><span class="n">s</span> <span class="p">(</span><span class="mi">30000</span> <span class="mi">30</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.5931</span>
+<span class="mi">1</span><span class="n">m</span> <span class="mi">20</span><span class="n">s</span> <span class="p">(</span><span class="mi">35000</span> <span class="mi">35</span><span class="o">%</span><span class="p">)</span> <span class="mf">3.1814</span>
+<span class="mi">1</span><span class="n">m</span> <span class="mi">32</span><span class="n">s</span> <span class="p">(</span><span class="mi">40000</span> <span class="mi">40</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.9818</span>
+<span class="mi">1</span><span class="n">m</span> <span class="mi">43</span><span class="n">s</span> <span class="p">(</span><span class="mi">45000</span> <span class="mi">45</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.4411</span>
+<span class="mi">1</span><span class="n">m</span> <span class="mi">55</span><span class="n">s</span> <span class="p">(</span><span class="mi">50000</span> <span class="mi">50</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.4891</span>
+<span class="mi">2</span><span class="n">m</span> <span class="mi">6</span><span class="n">s</span> <span class="p">(</span><span class="mi">55000</span> <span class="mi">55</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.3657</span>
+<span class="mi">2</span><span class="n">m</span> <span class="mi">18</span><span class="n">s</span> <span class="p">(</span><span class="mi">60000</span> <span class="mi">60</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.3030</span>
+<span class="mi">2</span><span class="n">m</span> <span class="mi">29</span><span class="n">s</span> <span class="p">(</span><span class="mi">65000</span> <span class="mi">65</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.6979</span>
+<span class="mi">2</span><span class="n">m</span> <span class="mi">40</span><span class="n">s</span> <span class="p">(</span><span class="mi">70000</span> <span class="mi">70</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.5766</span>
+<span class="mi">2</span><span class="n">m</span> <span class="mi">53</span><span class="n">s</span> <span class="p">(</span><span class="mi">75000</span> <span class="mi">75</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.9658</span>
+<span class="mi">3</span><span class="n">m</span> <span class="mi">4</span><span class="n">s</span> <span class="p">(</span><span class="mi">80000</span> <span class="mi">80</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.2696</span>
+<span class="mi">3</span><span class="n">m</span> <span class="mi">15</span><span class="n">s</span> <span class="p">(</span><span class="mi">85000</span> <span class="mi">85</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.8910</span>
+<span class="mi">3</span><span class="n">m</span> <span class="mi">27</span><span class="n">s</span> <span class="p">(</span><span class="mi">90000</span> <span class="mi">90</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.7314</span>
+<span class="mi">3</span><span class="n">m</span> <span class="mi">38</span><span class="n">s</span> <span class="p">(</span><span class="mi">95000</span> <span class="mi">95</span><span class="o">%</span><span class="p">)</span> <span class="mf">2.4792</span>
+<span class="mi">3</span><span class="n">m</span> <span class="mi">50</span><span class="n">s</span> <span class="p">(</span><span class="mi">100000</span> <span class="mi">100</span><span class="o">%</span><span class="p">)</span> <span class="mf">1.2779</span>
 </pre></div>
 </div>
 </div>
@@ -716,16 +716,16 @@ training and have the network choose its own starting letter.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Romako</span>
-<span class="n">Uanton</span>
-<span class="n">Shara</span>
-<span class="n">Ganer</span>
-<span class="n">Eerter</span>
-<span class="n">Remer</span>
-<span class="n">Salla</span>
-<span class="n">Pare</span>
-<span class="n">Alla</span>
-<span class="n">Cha</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Rovaki</span>
+<span class="n">Uanaka</span>
+<span class="n">Sharak</span>
+<span class="n">Gert</span>
+<span class="n">Eerren</span>
+<span class="n">Romer</span>
+<span class="n">Sarana</span>
+<span class="n">Paran</span>
+<span class="n">Alana</span>
+<span class="n">Chan</span>
 <span class="n">Han</span>
 <span class="n">Iun</span>
 </pre></div>
@@ -748,7 +748,7 @@ choosing a start letter</li>
 </ul>
 </li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 6 minutes  42.679 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 3 minutes  50.179 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/char-rnn-generation-tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">char-rnn-generation-tutorial.py</span></code></a></div>
@@ -766,7 +766,7 @@ choosing a start letter</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="seq2seq-translation.html" class="btn btn-neutral float-right" title="Translation with a Sequence to Sequence Network and Attention" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="seq2seq-translation-tutorial.html" class="btn btn-neutral float-right" title="Translation with a Sequence to Sequence Network and Attention" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="char-rnn-classification-tutorial.html" class="btn btn-neutral" title="Classifying Names with a Character-Level RNN" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

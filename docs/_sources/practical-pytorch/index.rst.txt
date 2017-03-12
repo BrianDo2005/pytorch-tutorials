@@ -50,9 +50,9 @@ Tutorials
 
 .. only:: html
 
-    .. figure:: /practical-pytorch/images/thumb/sphx_glr_seq2seq-translation_thumb.png
+    .. figure:: /practical-pytorch/images/thumb/sphx_glr_seq2seq-translation-tutorial_thumb.png
 
-        :ref:`sphx_glr_practical-pytorch_seq2seq-translation.py`
+        :ref:`sphx_glr_practical-pytorch_seq2seq-translation-tutorial.py`
 
 .. raw:: html
 
@@ -62,7 +62,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   /practical-pytorch/seq2seq-translation
+   /practical-pytorch/seq2seq-translation-tutorial
 .. raw:: html
 
     <div style='clear:both'></div>
@@ -74,13 +74,13 @@ Tutorials
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: practical-pytorch_python.zip <//Users/Sasank/work/software/pytorch all/tutorial-docs/practical-pytorch/practical-pytorch_python.zip>`
+    :download:`Download all examples in Python source code: practical-pytorch_python.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/practical-pytorch/practical-pytorch_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: practical-pytorch_jupyter.zip <//Users/Sasank/work/software/pytorch all/tutorial-docs/practical-pytorch/practical-pytorch_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: practical-pytorch_jupyter.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/practical-pytorch/practical-pytorch_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

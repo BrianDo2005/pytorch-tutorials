@@ -259,23 +259,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/char-rnn-generation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -423,7 +423,7 @@ You can use any of the Tensor operations in the <code class="docutils literal"><
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">0.0688</span> <span class="o">-</span><span class="mf">0.0414</span> <span class="o">-</span><span class="mf">0.1274</span>  <span class="mf">0.1181</span> <span class="o">-</span><span class="mf">0.1089</span>  <span class="mf">0.0146</span>  <span class="mf">0.0226</span>  <span class="mf">0.0096</span>  <span class="mf">0.0444</span> <span class="o">-</span><span class="mf">0.0068</span>
+ <span class="mf">0.0191</span> <span class="o">-</span><span class="mf">0.0825</span>  <span class="mf">0.0336</span>  <span class="mf">0.1151</span> <span class="o">-</span><span class="mf">0.1437</span>  <span class="mf">0.1369</span>  <span class="mf">0.1394</span> <span class="o">-</span><span class="mf">0.0610</span> <span class="o">-</span><span class="mf">0.0607</span> <span class="o">-</span><span class="mf">0.0289</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x10</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -497,7 +497,7 @@ between the input and the target.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">38.4679</span>
+ <span class="mf">38.4748</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -520,9 +520,9 @@ w.r.t. the loss, and all Variables in the graph will have their
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">MSELoss</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecc48</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">Linear</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecb88</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">Threshold</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x1288ecac8</span><span class="o">&gt;</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">MSELoss</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fd56dafd888</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">Linear</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fd56dafd7c8</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">thnn</span><span class="o">.</span><span class="n">auto</span><span class="o">.</span><span class="n">Threshold</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fd56dafd708</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -558,12 +558,12 @@ gradients before and after the backward.</p>
 <span class="n">conv1</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">grad</span> <span class="n">after</span> <span class="n">backward</span>
 <span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
 <span class="mf">1.00000e-02</span> <span class="o">*</span>
-  <span class="mf">0.8573</span>
- <span class="o">-</span><span class="mf">0.2858</span>
-  <span class="mf">2.8886</span>
-  <span class="mf">3.3070</span>
- <span class="o">-</span><span class="mf">7.4440</span>
- <span class="o">-</span><span class="mf">6.6386</span>
+  <span class="mf">9.3180</span>
+ <span class="o">-</span><span class="mf">6.3557</span>
+  <span class="mf">9.7288</span>
+  <span class="mf">9.0345</span>
+ <span class="o">-</span><span class="mf">5.4155</span>
+ <span class="o">-</span><span class="mf">9.0653</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -609,7 +609,7 @@ implements all these methods. Using it is very simple:</p>
 <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>    <span class="c1"># Does the update</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.033 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.015 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/neural_networks_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">neural_networks_tutorial.py</span></code></a></div>

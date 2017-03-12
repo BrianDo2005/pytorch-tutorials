@@ -445,6 +445,7 @@ ax.set_yticklabels([''] + all_categories)
 ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
 ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
 
+# sphinx_gallery_thumbnail_number = 2
 plt.show()
 
 

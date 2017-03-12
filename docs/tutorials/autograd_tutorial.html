@@ -259,23 +259,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/char-rnn-generation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -391,7 +391,7 @@ argument that is a tensor of matching shape.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">basic_ops</span><span class="o">.</span><span class="n">AddConstant</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10377d7c8</span><span class="o">&gt;</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">_functions</span><span class="o">.</span><span class="n">basic_ops</span><span class="o">.</span><span class="n">AddConstant</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fd58ecd9648</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Do more operations on y</p>
@@ -451,9 +451,9 @@ Therefore,
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">398.4445</span>
- <span class="mf">391.4585</span>
- <span class="mf">853.9858</span>
+  <span class="o">-</span><span class="mf">21.6854</span>
+ <span class="mf">1089.9176</span>
+   <span class="mf">74.1959</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -474,7 +474,7 @@ Therefore,
 <p><strong>Read Later:</strong></p>
 <blockquote>
 <div>Documentation of <code class="docutils literal"><span class="pre">Variable</span></code> and <code class="docutils literal"><span class="pre">Function</span></code> is at <span class="xref doc">/autograd</span></div></blockquote>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.127 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.196 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/autograd_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">autograd_tutorial.py</span></code></a></div>

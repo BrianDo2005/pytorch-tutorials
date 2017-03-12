@@ -258,23 +258,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/char-rnn-generation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -332,30 +332,28 @@ level.</li>
 <p><em>This tutorial assumes that you have a basic familiarity of numpy</em></p>
 <p><strong>Note:</strong> Make sure you have the <a class="reference external" href="https://github.com/pytorch/pytorch">torch</a> and <a class="reference external" href="https://github.com/pytorch/vision">torchvision</a> packages
 installed.</p>
-<div class="sphx-glr-thumbcontainer" tooltip="It’s a Python based scientific computing package targeted at two sets of audiences:"><div class="figure" id="id1">
-<img alt="../_images/tensor_illustration.png" src="../_images/tensor_illustration.png" />
+<div class="toctree-wrapper compound">
+</div>
+<p><div class="sphx-glr-thumbcontainer" tooltip="It’s a Python based scientific computing package targeted at two sets of audiences:"><div class="figure" id="id1">
+<img alt="../_images/tensor_illustration_flat.png" src="../_images/tensor_illustration_flat.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="tensor_tutorial.html#sphx-glr-tutorials-tensor-tutorial-py"><span class="std std-ref">What is PyTorch?</span></a></span></p>
 </div>
-</div><div class="toctree-wrapper compound">
-</div>
-<div class="sphx-glr-thumbcontainer" tooltip="Central to all neural networks in PyTorch is the ``autograd`` package. Let’s first briefly visi..."><div class="figure" id="id2">
-<img alt="../_images/Variable.png" src="../_images/Variable.png" />
+</div></p>
+<p><div class="sphx-glr-thumbcontainer" tooltip="Central to all neural networks in PyTorch is the ``autograd`` package. Let’s first briefly visi..."><div class="figure" id="id2">
+<img alt="../_images/Variable1.png" src="../_images/Variable1.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="autograd_tutorial.html#sphx-glr-tutorials-autograd-tutorial-py"><span class="std std-ref">Autograd: automatic differentiation</span></a></span></p>
 </div>
-</div><div class="toctree-wrapper compound">
-</div>
-<div class="sphx-glr-thumbcontainer" tooltip="Neural networks can be constructed using the ``torch.nn`` package."><div class="figure" id="id3">
-<img alt="../_images/mnist.png" src="../_images/mnist.png" />
+</div></p>
+<p><div class="sphx-glr-thumbcontainer" tooltip="Neural networks can be constructed using the ``torch.nn`` package."><div class="figure" id="id3">
+<img alt="../_images/mnist1.png" src="../_images/mnist1.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="neural_networks_tutorial.html#sphx-glr-tutorials-neural-networks-tutorial-py"><span class="std std-ref">Neural Networks</span></a></span></p>
 </div>
-</div><div class="toctree-wrapper compound">
-</div>
-<div class="sphx-glr-thumbcontainer" tooltip="This is it. You have seen how to define neural networks, compute loss and make updates to the w..."><div class="figure" id="id4">
-<img alt="../_images/cifar10.png" src="../_images/cifar10.png" />
+</div></p>
+<p><div class="sphx-glr-thumbcontainer" tooltip="This is it. You have seen how to define neural networks, compute loss and make updates to the w..."><div class="figure" id="id4">
+<img alt="../_images/cifar101.png" src="../_images/cifar101.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="cifar10_tutorial.html#sphx-glr-tutorials-cifar10-tutorial-py"><span class="std std-ref">Training a classifier</span></a></span></p>
 </div>
-</div><div class="toctree-wrapper compound">
-</div>
+</div></p>
 <div style='clear:both'></div></div>
 
 

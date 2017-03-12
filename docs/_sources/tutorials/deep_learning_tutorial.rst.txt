@@ -16,97 +16,26 @@ installed.
 .. _torchvision: https://github.com/pytorch/vision
 
 
-.. ##########################  tensor ########################## 
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="It’s a Python based scientific computing package targeted at two sets of audiences:">
-
-.. only:: html
-
-    .. figure:: /_static/img/tensor_illustration.png
-
-        :ref:`sphx_glr_tutorials_tensor_tutorial.py`
-
-.. raw:: html
-
-    </div>
-
-
 .. toctree::
    :hidden:
 
    /tutorials/tensor_tutorial
-
-
-.. ##########################  autograd ########################## 
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Central to all neural networks in PyTorch is the ``autograd`` package. Let’s first briefly visi...">
-
-.. only:: html
-
-    .. figure:: /_static/img/Variable.png
-
-        :ref:`sphx_glr_tutorials_autograd_tutorial.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorials/autograd_tutorial
-
-
-.. ##########################  neural_networks ####################
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Neural networks can be constructed using the ``torch.nn`` package.">
-
-.. only:: html
-
-    .. figure:: /_static/img/mnist.png
-
-        :ref:`sphx_glr_tutorials_neural_networks_tutorial.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorials/neural_networks_tutorial
-
-.. ##########################  cifar10 ####################
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is it. You have seen how to define neural networks, compute loss and make updates to the w...">
-
-.. only:: html
-
-    .. figure:: /_static/img/cifar10.png
-
-        :ref:`sphx_glr_tutorials_cifar10_tutorial.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorials/cifar10_tutorial
+
+.. galleryitem:: tutorials/tensor_tutorial.py
+    :figure: /_static/img/tensor_illustration_flat.png
+
+.. galleryitem:: tutorials/autograd_tutorial.py
+    :figure: /_static/img/Variable.png
+
+.. galleryitem:: tutorials/neural_networks_tutorial.py
+    :figure: /_static/img/mnist.png
+
+.. galleryitem:: tutorials/cifar10_tutorial.py
+    :figure: /_static/img/cifar10.png
 
 .. raw:: html
 
     <div style='clear:both'></div>
-

@@ -533,7 +533,7 @@ the notebook and run lot more epsiodes.
 
 
 
-**Total running time of the script:** ( 0 minutes  12.977 seconds)
+**Total running time of the script:** ( 0 minutes  37.513 seconds)
 
 
 

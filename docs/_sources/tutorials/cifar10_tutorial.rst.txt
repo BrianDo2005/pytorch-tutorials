@@ -105,7 +105,9 @@ We transform them to Tensors of normalized range [-1, 1]
 
  Out::
 
-    Files already downloaded and verified
+    Downloading http://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
+    Extracting tar file
+    Done!
     Files already downloaded and verified
 
 
@@ -146,7 +148,7 @@ Let us show some of the training images, for fun.
 
  Out::
 
-    dog   car plane  bird
+    cat  bird truck horse
 
 
 2. Define a Convolution Neural Network
@@ -257,18 +259,18 @@ network and optimize
 
  Out::
 
-    [1,  2000] loss: 2.204
-    [1,  4000] loss: 1.845
-    [1,  6000] loss: 1.669
-    [1,  8000] loss: 1.594
-    [1, 10000] loss: 1.520
-    [1, 12000] loss: 1.472
-    [2,  2000] loss: 1.392
-    [2,  4000] loss: 1.372
-    [2,  6000] loss: 1.334
-    [2,  8000] loss: 1.305
-    [2, 10000] loss: 1.271
-    [2, 12000] loss: 1.299
+    [1,  2000] loss: 2.189
+    [1,  4000] loss: 1.851
+    [1,  6000] loss: 1.685
+    [1,  8000] loss: 1.598
+    [1, 10000] loss: 1.549
+    [1, 12000] loss: 1.465
+    [2,  2000] loss: 1.404
+    [2,  4000] loss: 1.341
+    [2,  6000] loss: 1.340
+    [2,  8000] loss: 1.296
+    [2, 10000] loss: 1.301
+    [2, 12000] loss: 1.274
     Finished Training
 
 
@@ -347,7 +349,7 @@ So, let's get the index of the highest energy:
 
  Out::
 
-    Predicted:    cat  ship  ship plane
+    Predicted:    cat   car   car plane
 
 
 The results seem pretty good.
@@ -379,7 +381,7 @@ Let us look at how the network performs on the whole dataset.
 
  Out::
 
-    Accuracy of the network on the 10000 test images: 57 %
+    Accuracy of the network on the 10000 test images: 56 %
 
 
 That looks waaay better than chance, which is 10% accuracy (randomly picking
@@ -419,16 +421,16 @@ not perform well:
 
  Out::
 
-    Accuracy of plane : 68 %
-    Accuracy of   car : 71 %
-    Accuracy of  bird : 35 %
-    Accuracy of   cat : 46 %
-    Accuracy of  deer : 46 %
-    Accuracy of   dog : 36 %
-    Accuracy of  frog : 75 %
-    Accuracy of horse : 66 %
-    Accuracy of  ship : 68 %
-    Accuracy of truck : 56 %
+    Accuracy of plane : 67 %
+    Accuracy of   car : 72 %
+    Accuracy of  bird : 47 %
+    Accuracy of   cat : 43 %
+    Accuracy of  deer : 44 %
+    Accuracy of   dog : 51 %
+    Accuracy of  frog : 69 %
+    Accuracy of horse : 55 %
+    Accuracy of  ship : 64 %
+    Accuracy of truck : 48 %
 
 
 Okay, so what next?
@@ -488,7 +490,7 @@ Where do I go next?
 .. _Chat with other users on Slack: http://pytorch.slack.com/messages/beginner/
 
 
-**Total running time of the script:** ( 1 minutes  55.804 seconds)
+**Total running time of the script:** ( 3 minutes  53.854 seconds)
 
 
 

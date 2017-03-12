@@ -259,23 +259,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/char-rnn-generation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#loading-data-files">Loading data files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-encoder">The Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#the-decoder">The Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#simple-decoder">Simple Decoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#attention-decoder">Attention Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html">Translation with a Sequence to Sequence Network and Attention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#loading-data-files">Loading data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-seq2seq-model">The Seq2Seq Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-encoder">The Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#the-decoder">The Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#simple-decoder">Simple Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#attention-decoder">Attention Decoder</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#preparing-training-data">Preparing Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training">Training</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#preparing-training-data">Preparing Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#evaluation">Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#training-and-evaluating">Training and Evaluating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#evaluation">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#training-and-evaluating">Training and Evaluating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../practical-pytorch/seq2seq-translation-tutorial.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -346,7 +346,7 @@ autograd to define our neural networks. For example,</p>
 you want to create a recurrent network, simply use the same Linear layer
 multiple times, without having to think about sharing weights.</p>
 <div class="figure" id="id1">
-<img alt="torch-nn-vs-pytorch-nn" src="../_images/torch-nn-vs-pytorch-nn.png" />
+<img alt="torch-nn-vs-pytorch-nn" src="../_images/torch-nn-vs-pytorch-nn1.png" />
 <p class="caption"><span class="caption-text">torch-nn-vs-pytorch-nn</span></p>
 </div>
 </div></blockquote>
@@ -458,7 +458,7 @@ sample through the ConvNet.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">2.2292</span>
+ <span class="mf">2.3384</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -479,8 +479,8 @@ way through the ConvNet to it’s weights</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.7787488608735864</span>
-<span class="mf">0.382481510321296</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.7583074627193611</span>
+<span class="mf">0.11530809321657105</span>
 </pre></div>
 </div>
 </div>
@@ -522,7 +522,7 @@ output:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 input size: torch.Size([1, 10, 12, 12])
 output size: torch.Size([1, 20, 8, 8])
-output norm: 17.17489636659921
+output norm: 14.131972440140691
 </pre></div>
 </div>
 <p>We register a backward hook on conv2 and print some information</p>
@@ -555,7 +555,7 @@ output:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 input size: torch.Size([1, 10, 12, 12])
 output size: torch.Size([1, 20, 8, 8])
-output norm: 17.17489636659921
+output norm: 14.131972440140691
 Inside Conv2d backward
 Inside class:Conv2d
 
@@ -566,7 +566,7 @@ grad_output[0]:  &lt;class &#39;torch.autograd.variable.Variable&#39;&gt;
 
 grad_input size: torch.Size([1, 10, 12, 12])
 grad_output size: torch.Size([1, 20, 8, 8])
-grad_input norm: 0.0855098630309808
+grad_input norm: 0.026108688283764225
 </pre></div>
 </div>
 <p>A full and working MNIST example is located here
@@ -623,7 +623,7 @@ Recurrent Nets</p>
 <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.017 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.007 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/torchies_nn_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">torchies_nn_tutorial.py</span></code></a></div>
