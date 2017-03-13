@@ -169,6 +169,25 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
@@ -508,8 +527,8 @@ a LogSoftmax layer after the output.</p>
 <span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 
 <span class="k">class</span> <span class="nc">RNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">RNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
 
@@ -559,10 +578,10 @@ pre-computing batches of Tensors.</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
 
 <span class="n">Columns</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">9</span>
-<span class="o">-</span><span class="mf">2.9330</span> <span class="o">-</span><span class="mf">2.8728</span> <span class="o">-</span><span class="mf">2.9113</span> <span class="o">-</span><span class="mf">2.9039</span> <span class="o">-</span><span class="mf">2.8605</span> <span class="o">-</span><span class="mf">2.8942</span> <span class="o">-</span><span class="mf">2.7865</span> <span class="o">-</span><span class="mf">2.8680</span> <span class="o">-</span><span class="mf">2.8434</span> <span class="o">-</span><span class="mf">2.8075</span>
+<span class="o">-</span><span class="mf">2.8090</span> <span class="o">-</span><span class="mf">2.9180</span> <span class="o">-</span><span class="mf">2.8675</span> <span class="o">-</span><span class="mf">3.0212</span> <span class="o">-</span><span class="mf">2.9014</span> <span class="o">-</span><span class="mf">2.8937</span> <span class="o">-</span><span class="mf">3.0033</span> <span class="o">-</span><span class="mf">2.9236</span> <span class="o">-</span><span class="mf">2.8354</span> <span class="o">-</span><span class="mf">2.9428</span>
 
 <span class="n">Columns</span> <span class="mi">10</span> <span class="n">to</span> <span class="mi">17</span>
-<span class="o">-</span><span class="mf">2.8561</span> <span class="o">-</span><span class="mf">2.9533</span> <span class="o">-</span><span class="mf">2.9188</span> <span class="o">-</span><span class="mf">2.9902</span> <span class="o">-</span><span class="mf">2.8859</span> <span class="o">-</span><span class="mf">2.9795</span> <span class="o">-</span><span class="mf">2.9699</span> <span class="o">-</span><span class="mf">2.8212</span>
+<span class="o">-</span><span class="mf">2.8872</span> <span class="o">-</span><span class="mf">2.7847</span> <span class="o">-</span><span class="mf">2.9864</span> <span class="o">-</span><span class="mf">2.7571</span> <span class="o">-</span><span class="mf">2.9413</span> <span class="o">-</span><span class="mf">2.8123</span> <span class="o">-</span><span class="mf">2.9178</span> <span class="o">-</span><span class="mf">2.8704</span>
 <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x18</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -586,7 +605,7 @@ of the greatest value:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;German&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;Portuguese&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We will also want a quick way to get a training example (a name and its
@@ -609,16 +628,16 @@ language):</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">category</span> <span class="o">=</span> <span class="n">English</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Cockle</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Spanish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Cabello</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">French</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Bonnaire</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">English</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Pankhurst</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">French</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Lestrange</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Japanese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Kakinomoto</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Scottish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Scott</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Portuguese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Delgado</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">French</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Gagnier</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Irish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Maurice</span>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">category</span> <span class="o">=</span> <span class="n">Greek</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Lolos</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Arabic</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Hakimi</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Korean</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Chou</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Czech</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Kocian</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Korean</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Nam</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">German</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Oelberg</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Portuguese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Franco</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Arabic</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Awad</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">English</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Noakes</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">Spanish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Espino</span>
 </pre></div>
 </div>
 </div>
@@ -708,26 +727,26 @@ average of the loss.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span>5000 5% (0m 8s) 2.9065 Burns / Greek ✗ (Scottish)
-10000 10% (0m 15s) 3.1260 Stegon / Irish ✗ (Czech)
-15000 15% (0m 23s) 1.1745 Soares / Portuguese ✓
-20000 20% (0m 31s) 3.3941 Vann / Vietnamese ✗ (Dutch)
-25000 25% (0m 38s) 1.5410 Mcgregor / Scottish ✓
-30000 30% (0m 45s) 1.0140 Coilean / Irish ✓
-35000 35% (0m 52s) 1.1825 Blazek / Polish ✗ (Czech)
-40000 40% (0m 59s) 1.6214 Rana / Spanish ✓
-45000 45% (1m 6s) 2.5459 Abel / Czech ✗ (Spanish)
-50000 50% (1m 13s) 3.0860 Marubeni / Italian ✗ (Japanese)
-55000 55% (1m 20s) 0.8990 Kwak / Korean ✓
-60000 60% (1m 27s) 0.4619 Dam / Vietnamese ✓
-65000 65% (1m 34s) 3.0947 Jarzembowski / Polish ✗ (Czech)
-70000 70% (1m 41s) 0.4072 Geng / Chinese ✓
-75000 75% (1m 48s) 0.5396 Rademacher / German ✓
-80000 80% (1m 55s) 3.2378 Kalb / Scottish ✗ (Arabic)
-85000 85% (2m 2s) 2.1645 Pander / German ✗ (Dutch)
-90000 90% (2m 10s) 1.8379 Eda / Spanish ✗ (Japanese)
-95000 95% (2m 17s) 1.4721 Forth / English ✓
-100000 100% (2m 25s) 0.9956 Di mercurio / Italian ✓
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span>5000 5% (0m 5s) 2.8287 Protz / Arabic ✗ (German)
+10000 10% (0m 10s) 2.6740 O&#39;Malley / Dutch ✗ (Irish)
+15000 15% (0m 15s) 3.0430 Igarashi / Italian ✗ (Japanese)
+20000 20% (0m 20s) 1.2053 Seah / Chinese ✓
+25000 25% (0m 25s) 1.1844 Zawisza / Polish ✓
+30000 30% (0m 30s) 1.7563 Mateus / Arabic ✗ (Portuguese)
+35000 35% (0m 35s) 0.9893 Granger / French ✓
+40000 40% (0m 40s) 3.0456 Arthur / Arabic ✗ (English)
+45000 45% (0m 45s) 1.0189 Groholsky / Russian ✓
+50000 50% (0m 50s) 1.4790 Hoang / Chinese ✗ (Vietnamese)
+55000 55% (0m 55s) 0.5459 Manos / Greek ✓
+60000 60% (1m 1s) 1.4694 Stolarz / Spanish ✗ (Polish)
+65000 65% (1m 6s) 0.1991 Warszawski / Polish ✓
+70000 70% (1m 11s) 0.9891 Araujo / Portuguese ✓
+75000 75% (1m 16s) 0.4271 Duong / Vietnamese ✓
+80000 80% (1m 21s) 0.2187 Vuu / Vietnamese ✓
+85000 85% (1m 26s) 0.1853 Gui / Chinese ✓
+90000 90% (1m 31s) 0.0684 Huynh / Vietnamese ✓
+95000 95% (1m 36s) 2.7591 Gorman / Irish ✗ (German)
+100000 100% (1m 42s) 0.0687 Hyun  / Korean ✓
 </pre></div>
 </div>
 </div>
@@ -823,19 +842,19 @@ English (perhaps because of overlap with other languages).</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Dovesky</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.80</span><span class="p">)</span> <span class="n">Russian</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.95</span><span class="p">)</span> <span class="n">Czech</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.45</span><span class="p">)</span> <span class="n">English</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">0.72</span><span class="p">)</span> <span class="n">Russian</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">0.91</span><span class="p">)</span> <span class="n">Czech</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">3.39</span><span class="p">)</span> <span class="n">Polish</span>
 
 <span class="o">&gt;</span> <span class="n">Jackson</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.24</span><span class="p">)</span> <span class="n">Scottish</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.31</span><span class="p">)</span> <span class="n">English</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">3.26</span><span class="p">)</span> <span class="n">Korean</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">0.20</span><span class="p">)</span> <span class="n">Scottish</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">2.19</span><span class="p">)</span> <span class="n">English</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">3.73</span><span class="p">)</span> <span class="n">Russian</span>
 
 <span class="o">&gt;</span> <span class="n">Satoshi</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.37</span><span class="p">)</span> <span class="n">Arabic</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.22</span><span class="p">)</span> <span class="n">Japanese</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.27</span><span class="p">)</span> <span class="n">Italian</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">0.83</span><span class="p">)</span> <span class="n">Japanese</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">1.88</span><span class="p">)</span> <span class="n">Italian</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">2.09</span><span class="p">)</span> <span class="n">Polish</span>
 </pre></div>
 </div>
 <p>The final versions of the scripts <a class="reference external" href="https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification">in the Practical PyTorch
@@ -877,7 +896,7 @@ output of predictions.</p>
 </ul>
 </li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 2 minutes  34.912 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 1 minutes  48.831 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/char-rnn-classification-tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">char-rnn-classification-tutorial.py</span></code></a></div>

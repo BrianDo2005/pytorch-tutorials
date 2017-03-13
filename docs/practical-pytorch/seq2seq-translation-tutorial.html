@@ -168,6 +168,25 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
@@ -436,7 +455,7 @@ called <code class="docutils literal"><span class="pre">Lang</span></code> which
 <span class="n">EOS_token</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="k">class</span> <span class="nc">Lang</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">word2index</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">word2count</span> <span class="o">=</span> <span class="p">{}</span>
@@ -470,8 +489,8 @@ punctuation.</p>
 <span class="c1"># Lowercase, trim, and remove non-letter characters</span>
 <span class="k">def</span> <span class="nf">normalizeString</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">unicodeToAscii</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">r&quot;([.!?])&quot;</span><span class="p">,</span> <span class="s2">r&quot; \1&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">r&quot;[^a-zA-Z.!?]+&quot;</span><span class="p">,</span> <span class="s2">r&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([.!?])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot; \1&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^a-zA-Z.!?]+&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span>
 </pre></div>
 </div>
@@ -599,8 +618,8 @@ next input word.</p>
 <img alt="" src="../_images/encoder-network.png" />
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EncoderRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">EncoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">EncoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_layers</span> <span class="o">=</span> <span class="n">n_layers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
 
@@ -638,8 +657,8 @@ last hidden state).</p>
 <img alt="" src="../_images/decoder-network.png" />
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DecoderRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">DecoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DecoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_layers</span> <span class="o">=</span> <span class="n">n_layers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
 
@@ -689,8 +708,8 @@ while shorter sentences will only use the first few.</p>
 <img alt="" src="../_images/attention-decoder-network.png" />
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AttnDecoderRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dropout_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">MAX_LENGTH</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">AttnDecoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dropout_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">MAX_LENGTH</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AttnDecoderRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span> <span class="o">=</span> <span class="n">output_size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_layers</span> <span class="o">=</span> <span class="n">n_layers</span>

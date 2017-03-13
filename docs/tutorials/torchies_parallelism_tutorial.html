@@ -48,7 +48,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyTorch Tutorials  documentation" href="../index.html"/>
         <link rel="up" title="PyTorch for former Torch users" href="former_torchies_tutorial.html"/>
-        <link rel="next" title="Reinforcement Learing (DQN) tutorial" href="reinforcement_q_learning_tutorial.html"/>
+        <link rel="next" title="Transfer Learning tutorial" href="transfer_learning_tutorial.html"/>
         <link rel="prev" title="nn package" href="torchies_nn_tutorial.html"/> 
 
   
@@ -166,6 +166,25 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Multi-GPU examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dataparallel">DataParallel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#part-of-the-model-on-cpu-and-part-on-the-gpu">Part of the model on CPU and part on the GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
 </ul>
 </li>
 </ul>
@@ -339,8 +358,8 @@ over multiple GPUs in the batch dimension.</p>
 
 <span class="k">class</span> <span class="nc">DataParallelModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
         <span class="c1"># wrap block2 in DataParallel</span>
@@ -392,8 +411,8 @@ these collectives</p>
 is on the CPU and part on the GPU</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DistributedModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">embedding</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
             <span class="n">rnn</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
         <span class="p">)</span>
@@ -443,7 +462,7 @@ the <code class="docutils literal"><span class="pre">optim</span></code> package
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reinforcement_q_learning_tutorial.html" class="btn btn-neutral float-right" title="Reinforcement Learing (DQN) tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="transfer_learning_tutorial.html" class="btn btn-neutral float-right" title="Transfer Learning tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="torchies_nn_tutorial.html" class="btn btn-neutral" title="nn package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

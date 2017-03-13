@@ -167,6 +167,25 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
@@ -330,12 +349,12 @@ weights multiple times to compute the innermost hidden layers.</p>
 <span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 
 <span class="k">class</span> <span class="nc">DynamicNet</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    In the constructor we construct three nn.Linear instances that we will use</span>
 <span class="sd">    in the forward pass.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">super</span><span class="p">(</span><span class="n">DynamicNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">DynamicNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">input_linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">D_in</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">middle_linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">output_linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">D_out</span><span class="p">)</span>

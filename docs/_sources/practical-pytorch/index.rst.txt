@@ -74,13 +74,13 @@ Tutorials
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: practical-pytorch_python.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/practical-pytorch/practical-pytorch_python.zip>`
+    :download:`Download all examples in Python source code: practical-pytorch_python.zip <//home/users/sasank/pp/pytorch-tutorials/practical-pytorch/practical-pytorch_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: practical-pytorch_jupyter.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/practical-pytorch/practical-pytorch_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: practical-pytorch_jupyter.zip <//home/users/sasank/pp/pytorch-tutorials/practical-pytorch/practical-pytorch_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

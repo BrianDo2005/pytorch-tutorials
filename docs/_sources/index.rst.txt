@@ -17,10 +17,10 @@ converted from their notebook form for easy browsing.
 
 - :doc:`tutorials/deep_learning_tutorial`
 - :doc:`tutorials/former_torchies_tutorial`
+- :doc:`tutorials/transfer_learning_tutorial`
 - :doc:`tutorials/reinforcement_q_learning_tutorial`
 - :doc:`tutorials/numpy_extensions_tutorial`
 - :doc:`tutorials/c_extension`
-
 
 .. toctree::
    :maxdepth: 2
@@ -30,6 +30,7 @@ converted from their notebook form for easy browsing.
 
    tutorials/deep_learning_tutorial
    tutorials/former_torchies_tutorial
+   tutorials/transfer_learning_tutorial
    tutorials/reinforcement_q_learning_tutorial
    tutorials/numpy_extensions_tutorial
    tutorials/c_extension.rst

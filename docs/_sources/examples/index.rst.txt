@@ -215,13 +215,13 @@ Tensor
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: examples_python.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/examples/examples_python.zip>`
+    :download:`Download all examples in Python source code: examples_python.zip <//home/users/sasank/pp/pytorch-tutorials/examples/examples_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: examples_jupyter.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/examples/examples_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: examples_jupyter.zip <//home/users/sasank/pp/pytorch-tutorials/examples/examples_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

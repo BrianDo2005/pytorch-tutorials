@@ -170,6 +170,25 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
@@ -350,7 +369,7 @@ It has the classes: ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘
 ‘dog’, ‘frog’, ‘horse’, ‘ship’, ‘truck’. The images in CIFAR-10 are of
 size 3x32x32, i.e. 3-channel color images of 32x32 pixels in size.</p>
 <div class="figure" id="id1">
-<img alt="cifar10" src="../_images/cifar10.png" />
+<img alt="cifar10" src="../_images/cifar101.png" />
 <p class="caption"><span class="caption-text">cifar10</span></p>
 </div>
 </div>
@@ -435,8 +454,8 @@ take 3-channel images (instead of 1-channel images as it was defined).</p>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
 
 <span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pool</span>  <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>

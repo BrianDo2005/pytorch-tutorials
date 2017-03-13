@@ -185,6 +185,26 @@
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, you will learn how to train your network using transfer learning. You can rea...">
+
+.. only:: html
+
+    .. figure:: /tutorials/images/thumb/sphx_glr_transfer_learning_tutorial_thumb.png
+
+        :ref:`sphx_glr_tutorials_transfer_learning_tutorial.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorials/transfer_learning_tutorial
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial shows how to use PyTorch to train a Deep Q Learning (DQN) agent on the CartPole-v...">
 
 .. only:: html
@@ -213,13 +233,13 @@
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: tutorials_python.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/tutorials/tutorials_python.zip>`
+    :download:`Download all examples in Python source code: tutorials_python.zip <//home/users/sasank/pp/pytorch-tutorials/tutorials/tutorials_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip <//Users/Sasank/work/software/pytorch all/pytorch-tutorials/tutorials/tutorials_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip <//home/users/sasank/pp/pytorch-tutorials/tutorials/tutorials_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

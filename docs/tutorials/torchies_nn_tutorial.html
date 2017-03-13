@@ -170,6 +170,25 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="transfer_learning_tutorial.html">Transfer Learning tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#load-data">Load Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualize-a-few-images">Visualize a few images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#training-the-model">Training the model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#visualizing-the-model-predictions">Visualizing the model predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#finetuning-the-convnet">Finetuning the convnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#train-and-evaluate">Train and evaluate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning_tutorial.html#convnet-as-fixed-feature-extractor">ConvNet as fixed feature extractor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transfer_learning_tutorial.html#id1">Train and evaluate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reinforcement_q_learning_tutorial.html">Reinforcement Learing (DQN) tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#replay-memory">Replay Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reinforcement_q_learning_tutorial.html#dqn-algorithm">DQN algorithm</a><ul>
@@ -372,10 +391,10 @@ run, from input to output</li>
 
 <span class="k">class</span> <span class="nc">MNISTConvNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># this is the place where you instantiate all your modules</span>
         <span class="c1"># you can later access them using the same names you&#39;ve given them in here</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">MNISTConvNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MNISTConvNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pool1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -498,7 +517,7 @@ Let’s look at an example.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printnorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
     <span class="c1"># input is a tuple of packed inputs</span>
     <span class="c1"># output is a Variable. output.data is the Tensor we are interested</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="s1">&#39; forward&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s1">&#39; forward&#39;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;input: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">input</span><span class="p">))</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;input[0]: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -527,8 +546,8 @@ output norm: 14.131972440140691
 </div>
 <p>We register a backward hook on conv2 and print some information</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printgradnorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad_input</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="s1">&#39; backward&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside class:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s1">&#39; backward&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Inside class:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;grad_input: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">grad_input</span><span class="p">))</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;grad_input[0]: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">grad_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -581,8 +600,8 @@ again for the recurrence.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
     <span class="c1"># you can also accept arguments in your model constructor</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">RNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
         <span class="n">input_size</span> <span class="o">=</span> <span class="n">data_size</span> <span class="o">+</span> <span class="n">hidden_size</span>
