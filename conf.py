@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.abspath('.'))
 import torch
 import glob
 import shutil
-from custom_directives import IncludeDirective, GalleryItemDirective
+from custom_directives import IncludeDirective, GalleryItemDirective, CustomGalleryItemDirective
 
 
 try:
@@ -44,34 +44,36 @@ import sphinx_rtd_theme
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.mathjax',
-              'sphinx_gallery.gen_gallery',
-              'sphinxcontrib.googleanalytics']
+              'sphinx_gallery.gen_gallery']
 
-googleanalytics_id = 'UA-47062272-3'
-googleanalytics_enabled = True
+
+# -- Sphinx-gallery configuration --------------------------------------------
+
 
 sphinx_gallery_conf = {
-    # path to your examples scripts
-    'examples_dirs': ['tutorial_source', 'examples_source',
-                      'practical-pytorch-source'],
-    # path where to save gallery generated examples
-    'gallery_dirs': ['tutorials', 'examples', 'practical-pytorch'],
+    'examples_dirs': ['beginner_source', 'intermediate_source',
+                      'advanced_source'],
+    'gallery_dirs': ['beginner', 'intermediate', 'advanced'],
     'filename_pattern': 'tutorial.py'
 }
 
-# Create tutorials folder if it doesn't exist
-try:
-    import os
-    os.mkdir('tutorials')
-except FileExistsError:
-    pass
+for i in range(len(sphinx_gallery_conf['examples_dirs'])):
+    gallery_dir = sphinx_gallery_conf['gallery_dirs'][i]
+    source_dir = sphinx_gallery_conf['examples_dirs'][i]
+    # Create gallery dirs if it doesn't exist
+    try:
+        os.mkdir(gallery_dir)
+    except FileExistsError:
+        pass
 
-# Copy rst files from tutorial_source folder to tutorials
-for f in glob.glob('tutorial_source/*.rst'):
-    shutil.copy(f, 'tutorials')
+    # Copy rst files from source dir to gallery dir
+    for f in glob.glob(os.path.join(source_dir, '*.rst')):
+        shutil.copy(f, gallery_dir)
 
-exclude_patterns = ['tutorials/index.rst']
+
 # Add any paths that contain templates here, relative to this directory.
+
+
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
@@ -108,6 +110,7 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns += sphinx_gallery_conf['examples_dirs']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -217,3 +220,4 @@ texinfo_documents = [
 def setup(app):
     app.add_directive('includenodoc', IncludeDirective)
     app.add_directive('galleryitem', GalleryItemDirective)
+    app.add_directive('customgalleryitem', CustomGalleryItemDirective)

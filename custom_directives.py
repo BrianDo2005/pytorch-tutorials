@@ -23,11 +23,15 @@ class IncludeDirective(Directive):
         env = document.settings.env
         rel_filename, filename = env.relfn2path(self.arguments[0])
 
-        text = open(filename).read()
-        text_no_docstring = self.docstring_regex.sub('', text)
+        try:
+            text = open(filename).read()
+            text_no_docstring = self.docstring_regex.sub('', text)
 
-        code_block = nodes.literal_block(text=text_no_docstring)
-        return [code_block]
+            code_block = nodes.literal_block(text=text_no_docstring)
+            return [code_block]
+        except FileNotFoundError as e:
+            print(e)
+            return []
 
 
 class GalleryItemDirective(Directive):
@@ -45,30 +49,105 @@ class GalleryItemDirective(Directive):
         basename = os.path.basename(fname)
         dirname = os.path.dirname(fname)
 
-        if 'intro' in self.options:
-            intro = self.options['intro'][:195] + '...'
-        else:
-            intro = sphinx_gallery.gen_rst.extract_intro(fname)
+        try:
+            if 'intro' in self.options:
+                intro = self.options['intro'][:195] + '...'
+            else:
+                intro = sphinx_gallery.gen_rst.extract_intro(fname)
 
-        thumbnail_rst = sphinx_gallery.backreferences._thumbnail_div(dirname, basename, intro)
+            thumbnail_rst = sphinx_gallery.backreferences._thumbnail_div(dirname, basename, intro)
 
-        if 'figure' in self.options:
-            env = self.state.document.settings.env
-            rel_figname, figname = env.relfn2path(self.options['figure'])
-            save_figname = os.path.join('_static/thumbs/', os.path.basename(figname))
+            if 'figure' in self.options:
+                env = self.state.document.settings.env
+                rel_figname, figname = env.relfn2path(self.options['figure'])
+                save_figname = os.path.join('_static/thumbs/', os.path.basename(figname))
 
-            try:
-                os.makedirs('_static/thumbs')
-            except FileExistsError:
-                pass
+                try:
+                    os.makedirs('_static/thumbs')
+                except FileExistsError:
+                    pass
 
-            sphinx_gallery.gen_rst.scale_image(figname, save_figname, 400, 280)
-            thumbnail_rst = re.sub(r'..\sfigure::\s.*\.png',
-                                   '.. figure:: /{}'.format(save_figname),
-                                   thumbnail_rst)
+                sphinx_gallery.gen_rst.scale_image(figname, save_figname, 400, 280)
+                thumbnail_rst = re.sub(r'..\sfigure::\s.*\.png',
+                                       '.. figure:: /{}'.format(save_figname),
+                                       thumbnail_rst)
 
-        thumbail = StringList(thumbnail_rst.split('\n'))
+            thumbnail = StringList(thumbnail_rst.split('\n'))
+            thumb = nodes.paragraph()
+            self.state.nested_parse(thumbnail, self.content_offset, thumb)
+
+            return [thumb]
+        except FileNotFoundError as e:
+            print(e)
+            return []
+
+
+
+GALLERY_TEMPLATE = """
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="{tooltip}">
+
+.. only:: html
+
+    .. figure:: {thumbnail}
+
+        {description}
+
+.. raw:: html
+
+    </div>
+"""
+
+class CustomGalleryItemDirective(Directive):
+    required_arguments = 0
+    optional_arguments = 0
+    final_argument_whitespace = True
+    option_spec = {'tooltip': directives.unchanged,
+                   'figure': directives.unchanged,
+                   'description': directives.unchanged}
+
+    has_content = False
+    add_index = False
+
+    def run(self):
+        try:
+            if 'tooltip' in self.options:
+                tooltip = self.options['tooltip'][:195] + '...'
+            else:
+                raise ValueError('tooltip not found')
+
+            if 'figure' in self.options:
+                env = self.state.document.settings.env
+                rel_figname, figname = env.relfn2path(self.options['figure'])
+                thumbnail = os.path.join('_static/thumbs/', os.path.basename(figname))
+
+                try:
+                    os.makedirs('_static/thumbs')
+                except FileExistsError:
+                    pass
+
+                sphinx_gallery.gen_rst.scale_image(figname, thumbnail, 400, 280)
+            else:
+                thumbnail = '_static/img/thumbnails/default.png'
+
+            if 'description' in self.options:
+                description = self.options['description']
+            else:
+                raise ValueError('description not doc found')
+
+        except FileNotFoundError as e:
+            print(e)
+            return []
+        except ValueError as e:
+            print(e)
+            raise
+            return []
+
+        thumbnail_rst = GALLERY_TEMPLATE.format(tooltip=tooltip,
+                                                thumbnail=thumbnail,
+                                                description=description)
+        thumbnail = StringList(thumbnail_rst.split('\n'))
         thumb = nodes.paragraph()
-        self.state.nested_parse(thumbail, self.content_offset, thumb)
-
+        self.state.nested_parse(thumbnail, self.content_offset, thumb)
         return [thumb]

@@ -1,105 +1,109 @@
 Welcome to PyTorch Tutorials
 ============================
 
-On this site, you'll find tutorials from different sources integrated to one 
-site so that they are easily browsable and searchable. For almost all 
-the tutorials/examples, you will find runnable jupyter notebook/python source 
-code downloads at the end of the tutorial/example. 
+For almost all the tutorials/examples, you will find runnable 
+jupyter notebook/python source code downloads at the end of the page. 
 
 Please send your feedback to `sasankchilamkurthy@gmail.com <mailto:sasankchilamkurthy@gmail.com>`_
 
 
-Tutorials
----------
-
-Following are `official pytorch tutorials <https://github.com/pytorch/tutorials>`_ 
-converted from their notebook form for easy browsing. 
-
-- :doc:`tutorials/deep_learning_tutorial`
-- :doc:`tutorials/former_torchies_tutorial`
-- :doc:`tutorials/transfer_learning_tutorial`
-- :doc:`tutorials/reinforcement_q_learning_tutorial`
-- :doc:`tutorials/numpy_extensions_tutorial`
-- :doc:`tutorials/c_extension`
-
-.. toctree::
-   :maxdepth: 2
-   :includehidden:
-   :hidden:
-   :caption: Tutorials
-
-   tutorials/deep_learning_tutorial
-   tutorials/former_torchies_tutorial
-   tutorials/transfer_learning_tutorial
-   tutorials/reinforcement_q_learning_tutorial
-   tutorials/numpy_extensions_tutorial
-   tutorials/c_extension.rst
+Beginner Tutorials
+------------------
    
+.. customgalleryitem::
+   :figure: /_static/img/thumbnails/pytorch-logo-flat.png
+   :tooltip: Understand PyTorch’s Tensor library and neural networks at a high level.
+   :description: :doc:`/beginner/deep_learning_60min_blitz`
 
-jcjohnson's PyTorch With Examples
----------------------------------
+.. customgalleryitem::
+   :tooltip: Understand similarities and differences between torch and pytorch.
+   :figure: /_static/img/thumbnails/torch-logo.png
+   :description: :doc:`/beginner/former_torchies_tutorial`
 
-These are `JCJohson's pytorch-examples 
-<https://github.com/jcjohnson/pytorch-examples>`_:
+.. customgalleryitem::
+   :tooltip: This tutorial introduces the fundamental concepts of PyTorch through self-contained examples.
+   :figure: /_static/img/thumbnails/examples.png
+   :description: :doc:`/beginner/pytorch_with_examples`
 
-- :doc:`jcjohnson_tutorial`
-- :doc:`jcjohnson_examples`
-
-.. toctree::
-   :maxdepth: 2
-   :includehidden:
-   :hidden:
-   :caption: PyTorch With Examples
-   
-   jcjohnson_tutorial
-   jcjohnson_examples
-
-Practical PyTorch Tutorials
----------------------------
-
-
-.. figure:: https://i.imgur.com/eBRPvWB.png
-   :alt: Practical Pytorch
-
-Learn PyTorch with project-based tutorials. These tutorials demonstrate
-modern techniques with readable code and use regular data from the
-internet.
-
-Please see :doc:`practical-pytorch-get-started`
-
-Series 1: RNNs for NLP
-^^^^^^^^^^^^^^^^^^^^^^
-
-Applying recurrent neural networks to natural language tasks, from
-classification to generation.
-
-.. galleryitem:: practical-pytorch/char-rnn-classification-tutorial.py
-
-.. galleryitem:: practical-pytorch/char-rnn-generation-tutorial.py
-   :figure: _static/img/char_rnn_classification.png
-.. galleryitem:: practical-pytorch/seq2seq-translation-tutorial.py
-   :figure: _static/img/seq2seq_flat.png
+.. galleryitem:: beginner/transfer_learning_tutorial.py
 
 .. raw:: html
 
     <div style='clear:both'></div>
 
 
-**WIP**:
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :includehidden:
+   :caption: Beginner Tutorials
 
-- Sentiment Analysis with a Word-Level RNN and GloVe Embeddings
-- Sentence Similarity with a Word-Level Autoencoder
-- Intent Parsing with Recursive Application of Recurrent Neural Networks
+   beginner/deep_learning_60min_blitz
+   beginner/former_torchies_tutorial
+   beginner/pytorch_with_examples
+   beginner/transfer_learning_tutorial
+
+Intermediate Tutorials
+----------------------
+
+RNNs for NLP
+^^^^^^^^^^^^
+
+Applying recurrent neural networks to natural language tasks, from
+classification to generation.
 
 
+.. galleryitem:: intermediate/char_rnn_classification_tutorial.py
+.. galleryitem:: intermediate/char_rnn_generation_tutorial.py
+  :figure: /_static/img/char_rnn_generation.png
+.. galleryitem:: intermediate/seq2seq_translation_tutorial.py
+  :figure: _static/img/seq2seq_flat.png
+
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+Reinforcement Learning
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. galleryitem:: intermediate/reinforcement_q_learning_tutorial.py
+
+.. raw:: html
+
+    <div style='clear:both'></div>
 
 
 .. toctree::
    :maxdepth: 2
    :includehidden:
    :hidden:
-   :caption: Practical PyTorch
+   :caption: Intermediate Tutorials
+   
+   intermediate/char_rnn_classification_tutorial
+   intermediate/char_rnn_generation_tutorial
+   intermediate/seq2seq_translation_tutorial
+   intermediate/reinforcement_q_learning_tutorial
 
-   practical-pytorch/char-rnn-classification-tutorial
-   practical-pytorch/char-rnn-generation-tutorial
-   practical-pytorch/seq2seq-translation-tutorial
+Advanced Tutorials
+------------------
+
+.. galleryitem:: advanced/numpy_extensions_tutorial.py
+
+.. customgalleryitem::
+   :tooltip: Implement custom extensions in C.
+   :description: :doc:`/advanced/c_extension`
+
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+.. toctree::
+   :maxdepth: 2
+   :includehidden:
+   :hidden:
+   :caption: Advanced Tutorials
+   
+   advanced/numpy_extensions_tutorial
+   advanced/c_extension
+
