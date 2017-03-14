@@ -1,6 +1,7 @@
 """
 Generating Names with a Character-Level RNN
 *******************************************
+**Author**: Sean Robertson
 
 In the :doc:`last tutorial </intermediate/char_rnn_classification_tutorial>`
 we used a RNN to classify names into their language of origin. This time

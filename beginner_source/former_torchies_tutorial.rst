@@ -1,5 +1,7 @@
 PyTorch for former Torch users
 ------------------------------
+**Author**: Soumith Chintala
+
 
 In this tutorial, you will learn the following:
 

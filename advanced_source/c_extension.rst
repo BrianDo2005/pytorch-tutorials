@@ -1,5 +1,6 @@
 Custom C extensions for pytorch
 ===============================
+**Author**: Soumith Chintala
 
 Step 1. prepare your C code
 ---------------------------

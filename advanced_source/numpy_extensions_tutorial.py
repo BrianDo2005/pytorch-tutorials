@@ -1,6 +1,7 @@
 """
 Creating extensions using numpy and scipy
 =========================================
+**Author**: Adam Paszke
 
 In this tutorial, we shall go through two tasks:
 

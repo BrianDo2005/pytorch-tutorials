@@ -1,6 +1,7 @@
 """
 Classifying Names with a Character-Level RNN
 *********************************************
+**Author**: Sean Robertson
 
 We will be building and training a basic character-level RNN to classify
 words. A character-level RNN reads words as a series of characters -

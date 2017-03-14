@@ -1,6 +1,7 @@
 """
 Transfer Learning tutorial
 ==========================
+**Author**: Sasank Chilamkurthy
 
 In this tutorial, you will learn how to train your network using
 transfer learning. You can read more about the transfer learning at `cs231n

@@ -1,6 +1,7 @@
 """
 Translation with a Sequence to Sequence Network and Attention
 *************************************************************
+**Author**: Sean Robertson
 
 In this project we will be teaching a neural network to translate from
 French to English.

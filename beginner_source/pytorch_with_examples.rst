@@ -1,5 +1,6 @@
 Learning PyTorch with Examples
 ******************************
+**Author**: Justin Johnson
 
 This tutorial introduces the fundamental concepts of
 `PyTorch <https://github.com/pytorch/pytorch>`__ through self-contained

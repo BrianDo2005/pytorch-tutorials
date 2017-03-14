@@ -111,6 +111,7 @@ language = None
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 exclude_patterns += sphinx_gallery_conf['examples_dirs']
+exclude_patterns += ['*/index.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
