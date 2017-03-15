@@ -20,7 +20,10 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+
 docs:
+	unzip -o beginner_source/hymenoptera_data.zip -d beginner_source
+	unzip -o intermediate_source/data.zip -d intermediate_source
 	rm -rf docs
 	make html
 	cp -r $(BUILDDIR)/html docs

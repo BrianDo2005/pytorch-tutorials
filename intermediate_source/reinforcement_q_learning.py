@@ -175,7 +175,11 @@ class ReplayMemory(object):
 #
 # .. math::
 #
-#    \mathcal{L} = \frac{1}{|B|}\sum_{(s, a, s', r) \ \in \ B} \mathcal{L}(\delta) \quad \text{where} \quad \mathcal{L}(\delta) = \begin{cases}
+#    \mathcal{L} = \frac{1}{|B|}\sum_{(s, a, s', r) \ \in \ B} \mathcal{L}(\delta) 
+#
+# .. math::
+#
+#    \text{where} \quad \mathcal{L}(\delta) = \begin{cases}
 #      \frac{1}{2}{\delta^2}  & \text{for } |\delta| \le 1, \\
 #      |\delta| - \frac{1}{2} & \text{otherwise.}
 #    \end{cases}
@@ -419,7 +423,7 @@ def optimize_model():
 # 1), and optimize our model once. When the episode ends (our model
 # fails), we restart the loop.
 #
-# In the illustration below, `num_episodes` is set small. You should download
+# Below, `num_episodes` is set small. You should download
 # the notebook and run lot more epsiodes.
 
 num_episodes = 10

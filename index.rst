@@ -55,7 +55,7 @@ classification to generation.
 
 .. galleryitem:: intermediate/char_rnn_classification_tutorial.py
 .. galleryitem:: intermediate/char_rnn_generation_tutorial.py
-  :figure: /_static/img/char_rnn_generation.png
+  :figure: _static/img/char_rnn_generation.png
 .. galleryitem:: intermediate/seq2seq_translation_tutorial.py
   :figure: _static/img/seq2seq_flat.png
 
@@ -66,7 +66,8 @@ classification to generation.
 Reinforcement Learning
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. galleryitem:: intermediate/reinforcement_q_learning_tutorial.py
+.. galleryitem:: intermediate/reinforcement_q_learning.py
+    :figure: _static/img/cartpole.gif
 
 .. raw:: html
 
@@ -82,7 +83,7 @@ Reinforcement Learning
    intermediate/char_rnn_classification_tutorial
    intermediate/char_rnn_generation_tutorial
    intermediate/seq2seq_translation_tutorial
-   intermediate/reinforcement_q_learning_tutorial
+   intermediate/reinforcement_q_learning
 
 Advanced Tutorials
 ------------------
