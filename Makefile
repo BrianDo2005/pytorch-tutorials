@@ -28,6 +28,8 @@ docs:
 	make html
 	cp -r $(BUILDDIR)/html docs
 	touch docs/.nojekyll
+	cp intermediate_source/data.zip docs/_downloads
+	cp beginner_source/hymenoptera_data.zip docs/_downloads
 
 html-noplot:
 	$(SPHINXBUILD) -D plot_gallery=0 -b html $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"

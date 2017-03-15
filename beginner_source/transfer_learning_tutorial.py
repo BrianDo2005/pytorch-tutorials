@@ -60,9 +60,9 @@ import os
 #
 # This dataset is a very small subset of imagenet.
 # 
-# ..Note::
+# ..Note ::
 #    Download the data from
-#    `here <https://github.com/chsasank/pytorch-tutorials/raw/master/beginner_source/hymenoptera_data.zip>`_
+#    `here </_downloads/hymenoptera_data.zip>`_
 #    and extract it to the current directory.
 
 # Data augmentation and normalization for training 
