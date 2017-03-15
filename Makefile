@@ -26,8 +26,8 @@ docs:
 	unzip -o intermediate_source/data.zip -d intermediate_source
 	rm -rf docs
 	make html
-	cp intermediate_source/data.zip $(BUILDDIR)/_downloads
-	cp beginner_source/hymenoptera_data.zip $(BUILDDIR)/_downloads
+	cp intermediate_source/data.zip $(BUILDDIR)/html/_downloads
+	cp beginner_source/hymenoptera_data.zip $(BUILDDIR)/html/_downloads
 	cp -r $(BUILDDIR)/html docs
 	touch docs/.nojekyll
 
