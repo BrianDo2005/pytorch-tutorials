@@ -133,7 +133,7 @@ separated list of translation pairs:
 
 .. Note::
    Download the data from
-   `here <https://github.com/chsasank/pytorch-tutorials/raw/master/intermediate_source/data.zip>`_
+   `here <../_downloads/data.zip>`_
    and extract it to the current directory.
 
 
@@ -354,7 +354,7 @@ The full process for preparing the data is:
     Counted words:
     fra 4489
     eng 2925
-    ['j ai un peu faim .', 'i m a bit hungry .']
+    ['tu es fort comprehensive .', 'you re very understanding .']
 
 
 The Seq2Seq Model
@@ -1001,21 +1001,21 @@ reasonable results.
 
  Out::
 
-    1m 47s (- 25m 3s) (5000 6%) 2.8738
-    3m 32s (- 23m 4s) (10000 13%) 2.3289
-    5m 20s (- 21m 20s) (15000 20%) 2.0159
-    7m 7s (- 19m 35s) (20000 26%) 1.7763
-    8m 55s (- 17m 50s) (25000 33%) 1.5705
-    10m 43s (- 16m 5s) (30000 40%) 1.4044
-    12m 32s (- 14m 19s) (35000 46%) 1.2778
-    14m 21s (- 12m 33s) (40000 53%) 1.1520
-    16m 10s (- 10m 46s) (45000 60%) 1.0249
-    17m 59s (- 8m 59s) (50000 66%) 0.9557
-    19m 49s (- 7m 12s) (55000 73%) 0.8457
-    21m 39s (- 5m 24s) (60000 80%) 0.7621
-    23m 30s (- 3m 36s) (65000 86%) 0.7122
-    25m 20s (- 1m 48s) (70000 93%) 0.6618
-    27m 10s (- 0m 0s) (75000 100%) 0.5908
+    1m 49s (- 25m 32s) (5000 6%) 2.9003
+    3m 36s (- 23m 27s) (10000 13%) 2.2856
+    5m 39s (- 22m 37s) (15000 20%) 1.9777
+    7m 55s (- 21m 48s) (20000 26%) 1.7129
+    10m 13s (- 20m 27s) (25000 33%) 1.5676
+    12m 33s (- 18m 50s) (30000 40%) 1.3763
+    14m 56s (- 17m 4s) (35000 46%) 1.2640
+    17m 20s (- 15m 10s) (40000 53%) 1.1317
+    19m 42s (- 13m 8s) (45000 60%) 1.0395
+    22m 6s (- 11m 3s) (50000 66%) 0.9444
+    24m 32s (- 8m 55s) (55000 73%) 0.8523
+    26m 56s (- 6m 44s) (60000 80%) 0.7905
+    29m 20s (- 4m 30s) (65000 86%) 0.7197
+    31m 45s (- 2m 16s) (70000 93%) 0.6633
+    34m 10s (- 0m 0s) (75000 100%) 0.5899
 
 
 
@@ -1033,45 +1033,45 @@ reasonable results.
 
  Out::
 
-    > tu es vieux .
-    = you re old .
-    < you re old . <EOS>
+    > elles ne sont pas encore chez elles .
+    = they re not home yet .
+    < they re not home yet . <EOS>
 
-    > je suis impressionne par votre francais .
-    = i m impressed with your french .
-    < i m impressed with your french . <EOS>
+    > je suis seul .
+    = i m alone .
+    < i m alone . <EOS>
 
-    > ils n ont pas peur de la mort .
-    = they aren t afraid of death .
-    < they aren t afraid of death . <EOS>
+    > il sera bientot pere .
+    = he is soon to be a father .
+    < he is watching to be father . <EOS>
 
-    > vous etes une de ces menteuses !
-    = you are such a liar !
-    < you are such a liar ! <EOS>
+    > je suis guerie .
+    = i m cured .
+    < i m cured . <EOS>
 
-    > ca va .
-    = i m fine .
-    < i m fine . <EOS>
+    > je reste pour quelques autres semaines .
+    = i am staying for another few weeks .
+    < i m dying for making mistakes . <EOS>
 
-    > tu as trois heures de retard .
-    = you re three hours late .
-    < you re three hours late . <EOS>
+    > t es marrante .
+    = you re funny .
+    < you re re . <EOS>
 
-    > nous sommes desormais maries .
-    = we re married now .
-    < we re married now . <EOS>
+    > il est sur de reussir .
+    = he is sure of success .
+    < he is sure to succeed . <EOS>
 
-    > pour l instant je m entraine seulement .
-    = i am just warming up now .
-    < i am studying warming now . . <EOS>
+    > il est comedien .
+    = he s a comedian .
+    < he s a . . <EOS>
 
-    > vous avez toujours quelque chose a me reprocher .
-    = you are always finding fault with me .
-    < you are always finding fault with me . <EOS>
+    > vous etes jeune .
+    = you re young .
+    < you re young . <EOS>
 
-    > ce n est pas un homme ordinaire .
-    = he is no ordinary man .
-    < he is no ordinary man . <EOS>
+    > il n est plus le bienvenu ici .
+    = he is no longer welcome here .
+    < he is no longer welcome here . <EOS>
 
 
 Visualizing Attention
@@ -1183,13 +1183,13 @@ and labels:
  Out::
 
     input = elle a cinq ans de moins que moi .
-    output = she s five years younger than i am . <EOS>
+    output = she s five years younger than me . <EOS>
     input = elle est trop petit .
     output = she s too loud . <EOS>
     input = je ne crains pas de mourir .
-    output = i m not scared of dying . <EOS>
+    output = i m not afraid of die . <EOS>
     input = c est un jeune directeur plein de talent .
-    output = he s a talented young man . <EOS>
+    output = he is a intelligent young great . <EOS>
 
 
 Exercises
@@ -1216,7 +1216,7 @@ Exercises
 
 
 
-**Total running time of the script:** ( 27 minutes  16.012 seconds)
+**Total running time of the script:** ( 34 minutes  17.984 seconds)
 
 
 

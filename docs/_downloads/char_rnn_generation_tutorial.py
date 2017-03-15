@@ -64,7 +64,7 @@ Preparing the Data
 
 .. Note::
    Download the data from
-   `here <https://github.com/chsasank/pytorch-tutorials/raw/master/intermediate_source/data.zip>`_
+   `here <../_downloads/data.zip>`_
    and extract it to the current directory.
 
 See the last tutorial for more detail of this process. In short, there
