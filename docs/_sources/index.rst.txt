@@ -40,8 +40,9 @@ Beginner Tutorials
    :description: :doc:`/beginner/pytorch_with_examples`
 
 .. galleryitem:: beginner/transfer_learning_tutorial.py
-.. galleryitem:: beginner/deep_learning_nlp_tutorial.py
 
+.. galleryitem:: beginner/deep_learning_nlp_tutorial.py
+    :figure: /_static/img/thumbnails/babel.jpg
 .. raw:: html
 
     <div style='clear:both'></div>
