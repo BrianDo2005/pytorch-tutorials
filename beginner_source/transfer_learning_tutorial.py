@@ -1,7 +1,7 @@
 """
 Transfer Learning tutorial
 ==========================
-**Author**: Sasank Chilamkurthy
+**Author**: `Sasank Chilamkurthy <https://chsasank.github.io>`_
 
 In this tutorial, you will learn how to train your network using
 transfer learning. You can read more about the transfer learning at `cs231n
@@ -62,7 +62,7 @@ import os
 # 
 # .. Note ::
 #    Download the data from
-#    `here <../_downloads/hymenoptera_data.zip>`_
+#    `here <https://download.pytorch.org/tutorial/hymenoptera_data.zip>`_
 #    and extract it to the current directory.
 
 # Data augmentation and normalization for training 

@@ -1,7 +1,7 @@
 """
 Translation with a Sequence to Sequence Network and Attention
 *************************************************************
-**Author**: Sean Robertson
+**Author**: `Sean Robertson <https://github.com/spro/practical-pytorch>`_
 
 In this project we will be teaching a neural network to translate from
 French to English.
@@ -120,7 +120,7 @@ use_cuda = torch.cuda.is_available()
 #
 # .. Note::
 #    Download the data from
-#    `here <../_downloads/data.zip>`_
+#    `here <https://download.pytorch.org/tutorial/data.zip>`_
 #    and extract it to the current directory.
 
 ######################################################################

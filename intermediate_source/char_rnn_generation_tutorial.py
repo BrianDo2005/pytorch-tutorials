@@ -1,7 +1,7 @@
 """
 Generating Names with a Character-Level RNN
 *******************************************
-**Author**: Sean Robertson
+**Author**: `Sean Robertson <https://github.com/spro/practical-pytorch>`_
 
 In the :doc:`last tutorial </intermediate/char_rnn_classification_tutorial>`
 we used a RNN to classify names into their language of origin. This time
@@ -64,7 +64,7 @@ Preparing the Data
 
 .. Note::
    Download the data from
-   `here <../_downloads/data.zip>`_
+   `here <https://download.pytorch.org/tutorial/data.zip>`_
    and extract it to the current directory.
 
 See the last tutorial for more detail of this process. In short, there

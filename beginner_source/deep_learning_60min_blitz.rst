@@ -1,6 +1,6 @@
 Deep Learning with PyTorch: A 60 Minute Blitz
 ---------------------------------------------
-**Author**: Soumith Chintala
+**Author**: `Soumith Chintala <http://soumith.ch>`_
 
 Goal of this tutorial:
 

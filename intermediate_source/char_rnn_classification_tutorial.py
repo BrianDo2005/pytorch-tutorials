@@ -1,7 +1,7 @@
 """
 Classifying Names with a Character-Level RNN
 *********************************************
-**Author**: Sean Robertson
+**Author**: `Sean Robertson <https://github.com/spro/practical-pytorch>`_
 
 We will be building and training a basic character-level RNN to classify
 words. A character-level RNN reads words as a series of characters -
@@ -51,7 +51,7 @@ Preparing the Data
 
 .. Note::
    Download the data from
-   `here <../_downloads/data.zip>`_
+   `here <https://download.pytorch.org/tutorial/data.zip>`_
    and extract it to the current directory.
 
 Included in the ``data/names`` directory are 18 text files named as

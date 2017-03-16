@@ -1,7 +1,7 @@
 """
 Reinforcement Learning (DQN) tutorial
 =====================================
-**Author**: Adam Paszke
+**Author**: `Adam Paszke <https://github.com/apaszke>`_
 
 
 This tutorial shows how to use PyTorch to train a Deep Q Learning (DQN) agent

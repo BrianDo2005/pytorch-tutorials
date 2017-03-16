@@ -22,12 +22,12 @@ help:
 
 
 docs:
-	unzip -o beginner_source/hymenoptera_data.zip -d beginner_source
-	unzip -o intermediate_source/data.zip -d intermediate_source
+	wget -N https://download.pytorch.org/tutorial/data.zip
+	wget -N https://download.pytorch.org/tutorial/hymenoptera_data.zip
+	unzip -o hymenoptera_data.zip -d beginner_source
+	unzip -o data.zip -d intermediate_source
 	rm -rf docs
 	make html
-	cp intermediate_source/data.zip $(BUILDDIR)/html/_downloads
-	cp beginner_source/hymenoptera_data.zip $(BUILDDIR)/html/_downloads
 	cp -r $(BUILDDIR)/html docs
 	touch docs/.nojekyll
 
